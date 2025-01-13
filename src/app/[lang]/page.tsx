@@ -1,12 +1,19 @@
 import Header from "@/components/partials/header";
 import Hero from "@/components/partials/hero";
+import { getDictionary } from "../i18n/dictionary";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: 'en' | 'es' }>
+}) {
+  const lang = (await params).lang
+  const t = await (await getDictionary(lang)).homepage
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
-
+      <h1 className="text-6xl">{t.title}</h1>
       {/* Services Section */}
       <section id="services" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

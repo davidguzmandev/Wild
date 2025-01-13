@@ -23,14 +23,17 @@ export const metadata: Metadata = {
     "Wild Project es una Agencia de desarrollo web y aplicaciones. Traemos a la vida digital los proyectos que tienes en mente.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: {
+  params
+}: Readonly<{
   children: React.ReactNode;
-}) {
+  params: { lang: "en" | "es" }
+}>) {
+  const lang = (await params).lang;
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <link rel="icon" href="/favicon.ico" />
       <body
         className={`${inter.variable} antialiased`}>
