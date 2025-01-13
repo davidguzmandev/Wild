@@ -1,10 +1,10 @@
 {
   "Home": {
     "nav": {
-      "services": "Services",
-      "products": "Products",
+      "services": "Servicios",
+      "products": "Productos",
       "blog": "Blog",
-      "contact": "Contact"
+      "contact": "Contacto"
     },
     "hero": {
       "title": "Building Digital Excellence",
