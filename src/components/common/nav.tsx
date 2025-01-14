@@ -1,26 +1,26 @@
 import Link from "next/link";
 
-export default function Nav() {
+export default function Nav({ translations }: { translations: any }) {
 
   const navItems = [
     {
-      title: "Services",
-      label: "services",
+      title: `${translations.services}`,
+      label: `${translations.services}`.toLowerCase(),
       url: `#`,
     },
     {
-      title: "Product",
-      label: "product",
+      title: `${translations.products}`,
+      label: `${translations.products}`.toLowerCase(),
       url: `#`,
     },
     {
-      title: "Blog",
-      label: "blog",
+      title: `${translations.blog}`,
+      label: `${translations.blog}`.toLowerCase(),
       url: `#`,
     },
     {
-      title: "Contact",
-      label: "contact",
+      title: `${translations.contact}`,
+      label: `${translations.contact}`.toLowerCase(),
       url: `#`,
     },
   ];

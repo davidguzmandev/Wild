@@ -5,14 +5,29 @@ import { getDictionary } from "../i18n/dictionary";
 export default async function Home({
   params,
 }: {
-  params: Promise<{ lang: 'en' | 'es' }>
+  params: Promise<{ lang: "en" | "es" }>;
 }) {
-  const lang = (await params).lang
-  const t = await (await getDictionary(lang)).homepage
+  const lang = (await params).lang;
+  const t = await (await getDictionary(lang)).home;
+
   return (
     <div className="min-h-screen">
-      <Header />
-      <Hero />
+      <Header navTranslations={t} />
+      <Hero
+        navTranslations={t}
+        texts={[
+          t.nav.create,
+          t.nav.code,
+          t.nav.develop,
+          t.nav.design,
+          t.nav.imagine,
+          t.nav.build,
+          t.nav.innovate,
+          t.nav.invent,
+          t.nav.transform,
+          t.nav.craft,
+        ]}
+      />
       <h1 className="text-6xl">{t.title}</h1>
       {/* Services Section */}
       <section id="services" className="py-20">

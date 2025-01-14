@@ -1,8 +1,25 @@
 
 {
-    "homepage": {
-        "title": "Welcome to the homepage",
-        "description": "This is the homepage of the application"
+    "home": {
+        "title": "Wild - Web Design Agency | App Development",
+        "description": "Wild Project is a web and app development agency. We bring the projects you have in mind to digital life.",
+        "services": "Services",
+        "products": "Products",
+        "blog": "Blog",
+        "contact": "Contact",
+        "we" : "We",
+        "nav": {
+            "create": "Create.",
+            "code" : "Code.",
+            "develop" : "Develop.",
+            "design" : "Design.",
+            "imagine" : "Imagine.",
+            "build" : "Build.",
+            "innovate" : "Innovate.",
+            "invent" : "Invent.",
+            "transform" : "Transform.",
+            "craft" : "Craft."
+        }
     },
     
     "login": {

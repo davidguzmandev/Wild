@@ -4,7 +4,7 @@ import Nav from "@/components/common/nav";
 import logo from "@/images/logo.webp";
 import { useScroll } from "@/hooks/useScroll";
 
-export default function Header() {
+export default function Header({ navTranslations }: { navTranslations: any }) {
   const isScrolled = useScroll();
   return (
     <nav className={`
@@ -20,7 +20,7 @@ export default function Header() {
               priority 
             />
           </div>
-          <Nav />
+          <Nav translations={navTranslations} />
         </div>
       </div>
     </nav>

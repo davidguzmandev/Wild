@@ -1,8 +1,25 @@
 
 {
-    "homepage": {
-        "title": "Bienvenido a la página de inicio",
-        "description": "Esta es la página de inicio de la aplicación"
+    "home": {
+        "title": "Wild - Agencia de Diseño Web | Desarrollo de Aplicaciones",
+        "description": "Wild Project es una Agencia de desarrollo web y aplicaciones. Traemos a la vida digital los proyectos que tienes en mente.",
+        "services": "Servicios",
+        "products": "Productos",
+        "blog": "Blog",
+        "contact": "Contacto",
+        "we" : "Nosotros",
+        "nav": {
+            "create": "Creamos.",
+            "code" : "Programamos.",
+            "develop" : "Desarrollamos.",
+            "design" : "Diseñamos.",
+            "imagine" : "Imaginamos.",
+            "build" : "Construimos.",
+            "innovate" : "Innovamos.",
+            "invent" : "Inventamos.",
+            "transform" : "Transformamos.",
+            "craft" : "Fabricamos."
+        }
     },
     
     "login": {
