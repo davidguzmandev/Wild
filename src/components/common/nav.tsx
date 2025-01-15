@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { IconWorld } from '@tabler/icons-react';
 
 export default function Nav({ translations }: { translations: any }) {
+
+  const pathname = usePathname()
+  const isEn = pathname.startsWith('/en')
 
   const navItems = [
     {
@@ -35,6 +40,13 @@ export default function Nav({ translations }: { translations: any }) {
           {item.title}
         </Link>
       ))}
+      <Link
+        href={isEn ? '/es' : '/en'}
+        className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition"
+      >
+        <IconWorld stroke={1.25} className="w-4 h-4"/>
+        <span>{isEn ? 'Es' : 'En'}</span>
+      </Link>
     </div>
   );
 }

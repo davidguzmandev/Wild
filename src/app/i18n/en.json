@@ -8,10 +8,11 @@
         "blog": "Blog",
         "contact": "Contact",
         "we" : "We",
+        "heroText" : "Bringing your idea or business to digital life on a web page or application.",
         "nav": {
             "create": "Create.",
             "code" : "Code.",
-            "develop" : "Develop.",
+            "develop" : "Develop!",
             "design" : "Design.",
             "imagine" : "Imagine.",
             "build" : "Build.",
