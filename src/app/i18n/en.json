@@ -1,7 +1,7 @@
 
 {
     "home": {
-        "title": "Wild - Web Design Agency | App Development",
+        "title": "Wild | Web and Application Development Agency",
         "description": "Wild Project is a web and app development agency. We bring the projects you have in mind to digital life.",
         "services": "Services",
         "products": "Products",
@@ -9,6 +9,8 @@
         "contact": "Contact",
         "we" : "We",
         "heroText" : "Bringing your idea or business to digital life on a web page or application.",
+        "talktous": "Talk to us",
+        "seeservices": "See Services",
         "nav": {
             "create": "Create.",
             "code" : "Code.",
