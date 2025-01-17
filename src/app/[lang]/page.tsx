@@ -28,7 +28,7 @@ export default async function Home({
           t.nav.craft,
         ]}
       />
-      <h1 className="text-6xl">{t.title}</h1>
+      
       {/* Services Section */}
       <section id="services" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
