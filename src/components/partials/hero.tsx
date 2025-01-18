@@ -15,10 +15,11 @@ export default function Hero({
   texts: string[];
 }) {
   const currentText = useRandomText({ texts, interval: 2000 });
-
+  
   return (
-    <section className="h-screen pt-32 pb-20 relative bg-gradient-to-br from-indigo-200 via-purple-100 to-pink-200 animate-gradient bg-opacity-90">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="h-screen pt-32 pb-20 relative overflow-hidden">
+      <div className="gradient absolute inset-0 w-full h-full z-0 "></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="sm:mt-20 space-y-8 animate-fade-in-down">
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 text-center leading-tight max-sm:h-24">
             {navTranslations.we}

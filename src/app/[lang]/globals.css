@@ -60,6 +60,11 @@ body {
   }
 }
 
+.gradient {
+  background: linear-gradient(40deg, #f4e0fe, #c6c5ef, #a2c5cf, #8ccf7e);
+  height: 100vh;
+}
+
 .gradient-button {
   overflow: hidden;
 }
