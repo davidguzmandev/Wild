@@ -1,6 +1,7 @@
 import Header from "@/components/partials/header";
 import Hero from "@/components/partials/hero";
 import { getDictionary } from "../i18n/dictionary";
+import Services from "@/components/partials/services";
 
 export default async function Home({
   params,
@@ -28,23 +29,8 @@ export default async function Home({
           t.nav.craft,
         ]}
       />
-      
-      {/* Services Section */}
-      <section id="services" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">t</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {["web", "mobile", "cloud"].map((service) => (
-              <div
-                key={service}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                <h3 className="text-xl font-semibold mb-4">t</h3>
-                <p className="text-gray-600">t</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
+      <Services  navTranslations={t}/>
 
       {/* Contact CTA */}
       <section className="bg-blue-600 text-white py-16">

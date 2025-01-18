@@ -3,7 +3,6 @@ import { usePathname } from "next/navigation";
 import { IconWorld } from '@tabler/icons-react';
 
 export default function Nav({ translations }: { translations: any }) {
-
   const pathname = usePathname()
   const isEn = pathname.startsWith('/en')
 
@@ -43,8 +42,9 @@ export default function Nav({ translations }: { translations: any }) {
       <Link
         href={isEn ? '/es' : '/en'}
         className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition"
+        scroll={false}  // Evitar que la página haga scroll al principio
       >
-        <IconWorld stroke={1.25} className="w-4 h-4"/>
+        <IconWorld stroke={1.25} className="w-4 h-4" />
         <span>{isEn ? 'Es' : 'En'}</span>
       </Link>
     </div>
