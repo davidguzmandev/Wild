@@ -12,23 +12,25 @@
         "talktous": "Hable con nosotros",
         "seeservices": "Ver Servicios",
         "our": "Nuestros",
+        "viewmore": "Ver mas",
         "whatwedo": "Lo que hacemos",
         "web": "Web",
         "design": "Diseño",
+        "digitaldesign": "Diseño Digital",
+        "designdescription": "Un diseño profesional es clave para que tu empresa sea única, relevante y duradera. No subestimes el poder de una imagen impactante: asegura el futuro y la identidad de tu organización con un diseño que hable por sí solo.",
         "develop": "Desarrollo",
         "cms" : "CMS",
         "marketing" : "Marketing",
         "webdesign" : "Diseño Web",
-        "webdesigndescription": "Creamos diseños web impactantes y funcionales, optimizados con estrategias avanzadas de UX/UI.",
+        "webdescription": "Creamos diseños web impactantes y funcionales, optimizados con estrategias avanzadas de UX/UI. Adaptamos cada diseño a las necesidades de tu audiencia, asegurando una navegación fluida y atractiva en todos los dispositivos, convirtiendo visitantes en clientes.",
         "appdevelop": "Desarrollo de Aplicaciones",
         "appdevelopdescription": "Aplicaciones personalizadas con tecnología avanzada, diseño intuitivo y compatibles con múltiples plataformas.",
         "digitalmarketing": "Marketing Digital",
         "marketingdescription": "Una fusión de experiencia técnica, creatividad e innovación, diseñando soluciones que impulsan tu presencia en línea y logran resultados medibles.",
         "appmobile": "Aplicaciones Moviles",
         "webdevelop": "Desarrollo Web",
-        "joomladevelop": "Desarrollo Joomla",
-        "wordpressdevelop": "Desarrollo Wordpress",
         "ecommerce": "eCommerce",
+        "educative": "Educativo",
         "branddesign": "Diseño de Marca",
         "logodesign": "Diseño de Logo",
         "nav": {
@@ -42,6 +44,17 @@
             "invent" : "Inventamos.",
             "transform" : "Transformamos.",
             "craft" : "Fabricamos."
+        },
+        "listweb": {
+            "websites": "Paginas Web",
+            "landingpages": "Landing Pages",
+            "wordpressdevelop": "Desarrollo Wordpress",
+            "joomladevelop": "Desarrollo Joomla"
+        },
+        "listdesign": {
+            "logodesign": "Diseño de Logotipo",
+            "brandidentity": "Identidad de Marca",
+            "stationerydesign": "Diseño Impreso"
         }
     },
     

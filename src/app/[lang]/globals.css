@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  scroll-behavior: smooth;
 }
 /* Activar el tema cuando se configure el tema dark */
 /* @media (prefers-color-scheme: dark) {

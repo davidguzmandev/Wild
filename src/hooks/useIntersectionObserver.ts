@@ -1,10 +1,20 @@
 import { useState, useEffect } from "react";
 
-// Definir el tipo para el estado de visibilidad
 export const useIntersectionObserver = (threshold: number = 0.5): boolean => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -17,7 +27,7 @@ export const useIntersectionObserver = (threshold: number = 0.5): boolean => {
     );
 
     const section = document.querySelector("#services");
-    if (section) {
+    if (section && !isMobile) {
       observer.observe(section);
     }
 
@@ -25,8 +35,9 @@ export const useIntersectionObserver = (threshold: number = 0.5): boolean => {
       if (section) {
         observer.unobserve(section);
       }
+      window.removeEventListener('resize', checkMobile);
     };
-  }, [threshold]);
+  }, [threshold, isMobile]);
 
-  return isVisible;
+  return isMobile ? true : isVisible;
 };
