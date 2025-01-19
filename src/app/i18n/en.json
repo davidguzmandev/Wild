@@ -1,67 +1,84 @@
-
 {
-    "home": {
-        "title": "Wild | Web and Application Development Agency",
-        "description": "Wild Project is a web and app development agency. We bring the projects you have in mind to digital life.",
-        "services": "Services",
-        "products": "Products",
-        "blog": "Blog",
-        "contact": "Contact",
-        "we" : "We",
-        "heroText" : "Bringing your idea or business to digital life on a web page or application.",
-        "talktous": "Talk to us",
-        "seeservices": "See Services",
-        "our": "Our",
-        "viewmore": "View more",
-        "whatwedo": "What we do",
-        "web": "Web",
-        "design": "Design",
-        "digitaldesign": "Digital Design",
-        "designdescription": "A professional design is key to making your business unique, relevant and durable. Don’t underestimate the power of a powerful image: Secure your organization’s future and identity with a design that speaks for itself.",
-        "develop": "Development",
-        "cms" : "CMS",
-        "marketing" : "Marketing",
-        "webdesign" : "Web Design",
-        "webdescription": "Impactful and functional web designs, optimized with advanced UX/UI strategies. We adapt each design to the needs of your audience, ensuring smooth and attractive navigation on all devices, turning visitors into customers.",
-        "appdevelop": "Application Development",
-        "appdevelopdescription": "Custom apps with advanced technology, intuitive design and multi-platform support.",
-        "digitalmarketing": "Digital Merketing",
-        "marketingdescription": "A fusion of technical expertise, creativity and innovation, designing solutions that drive your online presence and achieve measurable results.",
-        "appmobile": "Mobile App",
-        "webdevelop": "Web Development",
-        "ecommerce": "eCommerce",
-        "educative": "Educative",
-        "branddesign": "Diseño de Marca",
-        "logodesign": "Diseño de Logo",
-        "nav": {
-            "create": "Creamos.",
-            "code" : "Programamos.",
-            "develop" : "Desarrollamos!",
-            "design" : "Diseñamos.",
-            "imagine" : "Imaginamos.",
-            "build" : "Construimos.",
-            "innovate" : "Innovamos.",
-            "invent" : "Inventamos.",
-            "transform" : "Transformamos.",
-            "craft" : "Fabricamos."
-        },
-        "listweb": {
-            "websites": "Websites",
-            "landingpages": "Landing Pages",
-            "wordpressdevelop": "Wordpress Development",
-            "joomladevelop": "Joomla Development"
-        },
-        "listdesign": {
-            "logodesign": "Logo Design",
-            "brandidentity": "Brand Identity",
-            "stationerydesign": "Stationery Design"
-        }
+  "home": {
+    "title": "Wild | ",
+    "description": "Wild Project is a web and application development agency. ",
+    "services": "Services",
+    "products": "Products",
+    "blog": "blog",
+    "contact": "Contact",
+    "we": "Us",
+    "heroText": "We bring your idea or business to digital life on a page or web application.",
+    "talktous": "talk to us",
+    "seeservices": "See Services",
+    "our": "Our",
+    "viewmore": "View more",
+    "whatwedo": "What we do",
+    "web": "Web",
+    "design": "Design",
+    "digitaldesign": "Digital Design",
+    "designdescription": "A professional design is key to making your company unique, relevant and lasting. ",
+    "develop": "Development",
+    "cms": "CMS",
+    "marketing": "Marketing",
+    "webdesign": "Web Design",
+    "webdescription": "We create impressive and functional web designs, optimized with advanced UX/UI strategies. ",
+    "appdevelop": "Application Development",
+    "appdevelopdescription": "We develop custom applications with advanced technology and intuitive design, offering fast, secure solutions compatible with multiple platforms, from conceptualization to implementation.",
+    "digitalmarketing": "Digital Marketing",
+    "marketingdescription": "We approach digital marketing as a fusion of technical expertise, creativity and innovation, designing customized solutions that optimize every aspect to boost your online presence and achieve measurable results.",
+    "appmobile": "Mobile Applications",
+    "webdevelop": "Web Development",
+    "ecommerce": "eCommerce",
+    "ecommercedescription": "From increasing your brand visibility and guiding your customers through the marketing funnel, to turning them into loyal and satisfied customers who recommend your business, we’ll be with you every step of the way to maximize your impact and success.",
+    "educative": "Educational",
+    "onlineshops": "Online Shops",
+    "branddesign": "Brand Design",
+    "logodesign": "Logo Design",
+    "nav": {
+      "create": "We create.",
+      "code": "We program.",
+      "develop": "We develop!",
+      "design": "We design.",
+      "imagine": "We imagine.",
+      "build": "We build.",
+      "innovate": "We innovate.",
+      "invent": "We invent.",
+      "transform": "We transform.",
+      "craft": "We manufacture."
     },
-    
-    "login": {
-        "title": "Login",
-        "username": "Username",
-        "password": "Password",
-        "login": "Login"
+    "listweb": {
+      "websites": "Web Pages",
+      "landingpages": "Landing Pages",
+      "wordpressdevelop": "Wordpress Development",
+      "joomladevelop": "Joomla Development",
+      "moodledevelop": "Moodle Development"
+    },
+    "listdesign": {
+      "logodesign": "Logo Design",
+      "brandidentity": "Brand Identity",
+      "stationerydesign": "Printed Design"
+    },
+    "listdevelop": {
+      "webapp": "Web Applications",
+      "mobileapp": "Mobile Applications"
+    },
+    "listmarketing": {
+      "socialmediamarketing": "Social Media Marketing",
+      "seo": "Search Engine Optimization (SEO)",
+      "advertising": "Advertising",
+      "emailmarketing": "Email Marketing"
+    },
+    "listecommerce": {
+      "ecommercedevelop": "eCommerce Development",
+      "shopify": "Shopify",
+      "prestashop": "Prestashop",
+      "woocommerce": "WooComerce"
     }
+  },
+  "login": {
+    "title": "Login",
+    "username": "User",
+    "password": "Password",
+    "login": "Login"
+  }
 }

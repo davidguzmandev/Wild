@@ -2,6 +2,8 @@
 import Image from "next/image";
 import web from "@/images/web.webp";
 import design from "@/images/design.webp";
+import mobile from "@/images/mobile.webp";
+import marketing from "@/images/marketing.webp";
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -34,6 +36,7 @@ export default function ServiceCard({
         `${navTranslations.listweb.landingpages}`,
         `${navTranslations.listweb.wordpressdevelop}`,
         `${navTranslations.listweb.joomladevelop}`,
+        `${navTranslations.listweb.moodledevelop}`
       ],
       link: "#",
     },
@@ -51,18 +54,39 @@ export default function ServiceCard({
     },
     {
       title: `${navTranslations.develop}`,
-      description: `${navTranslations.webdesigndescription}`,
-      image: "/images/develop.webp",
+      h2: `${navTranslations.appdevelop}`,
+      description: `${navTranslations.appdevelopdescription}`,
+      image: mobile,
+      list: [
+        `${navTranslations.listdevelop.webapp}`,
+        `${navTranslations.listdevelop.mobileapp}`
+      ],
       link: "#",
     },
     {
       title: `${navTranslations.marketing}`,
-      image: "/images/marketing.webp",
+      h2: `${navTranslations.digitalmarketing}`,
+      description: `${navTranslations.marketingdescription}`,
+      image: marketing,
+      list: [
+        `${navTranslations.listmarketing.socialmediamarketing}`,
+        `${navTranslations.listmarketing.seo}`,
+        `${navTranslations.listmarketing.advertising}`,
+        `${navTranslations.listmarketing.emailmarketing}`
+      ],
       link: "#",
     },
     {
       title: `${navTranslations.ecommerce}`,
-      image: "/images/ecommerce.webp",
+      h2: `${navTranslations.onlineshops}`,
+      description: `${navTranslations.ecommercedescription}`,
+      image: marketing,
+      list: [
+        `${navTranslations.listecommerce.ecommercedevelop}`,
+        `${navTranslations.listecommerce.shopify}`,
+        `${navTranslations.listecommerce.prestashop}`,
+        `${navTranslations.listecommerce.woocommerce}`
+      ],
       link: "#",
     },
   ];
@@ -104,7 +128,7 @@ export default function ServiceCard({
               <div key={service.title} className="animate-fade-in">
                 <div className="flex flex-col lg:flex-row items-start gap-8">
                   <div className="w-full lg:w-1/2 space-y-6">
-                    <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+                    <h2 className="text-3xl text-gray-700 sm:text-4xl font-bold tracking-tight">
                       {service.h2}
                     </h2>
                     <p className="text-gray-600 leading-relaxed">
@@ -129,7 +153,7 @@ export default function ServiceCard({
                       </ul>
                     )}
 
-                    <div className="pt-6 flex gap-8">
+                    <div className="flex gap-8">
                       <Link
                         href={service.link}
                         className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
@@ -151,11 +175,11 @@ export default function ServiceCard({
                       <div className="relative rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
                         <Image
                           src={service.image}
-                          width={600}
+                          width={400}
                           height={400}
                           alt={service.title}
-                          className="w-full h-auto object-cover"
                           priority
+                          className=""
                         />
                       </div>
                     </div>

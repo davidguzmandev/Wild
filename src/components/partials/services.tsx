@@ -15,6 +15,8 @@ export default function Services({ navTranslations }: { navTranslations: any }) 
   return (
     <section
       id="services"
+      aria-labelledby="services-heading"
+      aria-hidden={!isVisible}
       className={`py-20 transition-all duration-500 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}>

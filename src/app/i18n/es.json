@@ -1,67 +1,85 @@
-
 {
-    "home": {
-        "title": "Wild | Agencia de Desarrollo Web y Aplicaciones",
-        "description": "Wild Project es una Agencia de desarrollo web y aplicaciones. Traemos a la vida digital los proyectos que tienes en mente.",
-        "services": "Servicios",
-        "products": "Productos",
-        "blog": "Blog",
-        "contact": "Contacto",
-        "we" : "Nosotros",
-        "heroText" : "Traemos a la vida digital tu idea o negocio en una página o aplicación web.",
-        "talktous": "Hable con nosotros",
-        "seeservices": "Ver Servicios",
-        "our": "Nuestros",
-        "viewmore": "Ver mas",
-        "whatwedo": "Lo que hacemos",
-        "web": "Web",
-        "design": "Diseño",
-        "digitaldesign": "Diseño Digital",
-        "designdescription": "Un diseño profesional es clave para que tu empresa sea única, relevante y duradera. No subestimes el poder de una imagen impactante: asegura el futuro y la identidad de tu organización con un diseño que hable por sí solo.",
-        "develop": "Desarrollo",
-        "cms" : "CMS",
-        "marketing" : "Marketing",
-        "webdesign" : "Diseño Web",
-        "webdescription": "Creamos diseños web impactantes y funcionales, optimizados con estrategias avanzadas de UX/UI. Adaptamos cada diseño a las necesidades de tu audiencia, asegurando una navegación fluida y atractiva en todos los dispositivos, convirtiendo visitantes en clientes.",
-        "appdevelop": "Desarrollo de Aplicaciones",
-        "appdevelopdescription": "Aplicaciones personalizadas con tecnología avanzada, diseño intuitivo y compatibles con múltiples plataformas.",
-        "digitalmarketing": "Marketing Digital",
-        "marketingdescription": "Una fusión de experiencia técnica, creatividad e innovación, diseñando soluciones que impulsan tu presencia en línea y logran resultados medibles.",
-        "appmobile": "Aplicaciones Moviles",
-        "webdevelop": "Desarrollo Web",
-        "ecommerce": "eCommerce",
-        "educative": "Educativo",
-        "branddesign": "Diseño de Marca",
-        "logodesign": "Diseño de Logo",
-        "nav": {
-            "create": "Creamos.",
-            "code" : "Programamos.",
-            "develop" : "Desarrollamos!",
-            "design" : "Diseñamos.",
-            "imagine" : "Imaginamos.",
-            "build" : "Construimos.",
-            "innovate" : "Innovamos.",
-            "invent" : "Inventamos.",
-            "transform" : "Transformamos.",
-            "craft" : "Fabricamos."
-        },
-        "listweb": {
-            "websites": "Paginas Web",
-            "landingpages": "Landing Pages",
-            "wordpressdevelop": "Desarrollo Wordpress",
-            "joomladevelop": "Desarrollo Joomla"
-        },
-        "listdesign": {
-            "logodesign": "Diseño de Logotipo",
-            "brandidentity": "Identidad de Marca",
-            "stationerydesign": "Diseño Impreso"
-        }
+  "home": {
+    "title": "Wild | Agencia de Desarrollo Web y Aplicaciones",
+    "description": "Wild Project es una Agencia de desarrollo web y aplicaciones. Traemos a la vida digital los proyectos que tienes en mente.",
+    "services": "Servicios",
+    "products": "Productos",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "we": "Nosotros",
+    "heroText": "Traemos a la vida digital tu idea o negocio en una página o aplicación web.",
+    "talktous": "Hable con nosotros",
+    "seeservices": "Ver Servicios",
+    "our": "Nuestros",
+    "viewmore": "Ver mas",
+    "whatwedo": "Lo que hacemos",
+    "web": "Web",
+    "design": "Diseño",
+    "digitaldesign": "Diseño Digital",
+    "designdescription": "Un diseño profesional es clave para que tu empresa sea única, relevante y duradera. No subestimes el poder de una imagen impactante: asegura el futuro y la identidad de tu organización con un diseño que hable por sí solo.",
+    "develop": "Desarrollo",
+    "cms": "CMS",
+    "marketing": "Marketing",
+    "webdesign": "Diseño Web",
+    "webdescription": "Creamos diseños web impactantes y funcionales, optimizados con estrategias avanzadas de UX/UI. Adaptamos cada diseño a las necesidades de tu audiencia, asegurando una navegación fluida y atractiva en todos los dispositivos, convirtiendo visitantes en clientes.",
+    "appdevelop": "Desarrollo de Aplicaciones",
+    "appdevelopdescription": "Desarrollamos aplicaciones personalizadas con tecnología avanzada y diseño intuitivo, ofreciendo soluciones rápidas, seguras y compatibles con múltiples plataformas, desde la conceptualización hasta la implementación.",
+    "digitalmarketing": "Marketing Digital",
+    "marketingdescription": "Enfocamos el marketing digital como una fusión de experiencia técnica, creatividad e innovación, diseñando soluciones personalizadas que optimizan cada aspecto para impulsar tu presencia en línea y lograr resultados medibles.",
+    "appmobile": "Aplicaciones Moviles",
+    "webdevelop": "Desarrollo Web",
+    "ecommerce": "eCommerce",
+    "ecommercedescription": "Desde aumentar la visibilidad de tu marca y guiar a tus clientes a través del embudo de marketing, hasta convertirlos en clientes fieles y satisfechos que recomiendan tu negocio, estaremos contigo en cada paso del camino para maximizar tu impacto y éxito.",
+    "educative": "Educativo",
+    "onlineshops": "Tiendas Virtuales",
+    "branddesign": "Diseño de Marca",
+    "logodesign": "Diseño de Logo",
+    "nav": {
+      "create": "Creamos.",
+      "code": "Programamos.",
+      "develop": "Desarrollamos!",
+      "design": "Diseñamos.",
+      "imagine": "Imaginamos.",
+      "build": "Construimos.",
+      "innovate": "Innovamos.",
+      "invent": "Inventamos.",
+      "transform": "Transformamos.",
+      "craft": "Fabricamos."
     },
-    
-    "login": {
-        "title": "Login",
-        "username": "Usuario",
-        "password": "Contraseña",
-        "login": "Login"
+    "listweb": {
+      "websites": "Paginas Web",
+      "landingpages": "Landing Pages",
+      "wordpressdevelop": "Desarrollo Wordpress",
+      "joomladevelop": "Desarrollo Joomla",
+      "moodledevelop": "Desarrollo Moodle"
+    },
+    "listdesign": {
+      "logodesign": "Diseño de Logotipo",
+      "brandidentity": "Identidad de Marca",
+      "stationerydesign": "Diseño Impreso"
+    },
+    "listdevelop": {
+      "webapp": "Aplicaciones Web",
+      "mobileapp": "Aplicaciones Moviles"
+    },
+    "listmarketing": {
+      "socialmediamarketing": "Marketing de Redes Sociales",
+      "seo": "Optimizacion en Motores de Busqueda (SEO)",
+      "advertising": "Anuncios",
+      "emailmarketing": "Email Marketing"
+    },
+    "listecommerce": {
+      "ecommercedevelop": "Desarrollo de eCommerce",
+      "shopify": "Shopify",
+      "prestashop": "Prestashop",
+      "woocommerce": "WooComerce"
     }
+  },
+
+  "login": {
+    "title": "Login",
+    "username": "Usuario",
+    "password": "Contraseña",
+    "login": "Login"
+  }
 }
