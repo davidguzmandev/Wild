@@ -31,9 +31,10 @@ export default async function Home({
         ]}
       />
 
-      <Services  navTranslations={t}/>
-      <WeAre translations={t}/>
-
+      <Services navTranslations={t} />
+      <WeAre
+        translations={t}
+      />
 
       {/* Contact CTA */}
       <section className="bg-blue-600 text-white py-16">

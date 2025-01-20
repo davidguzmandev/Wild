@@ -34,6 +34,8 @@
     "onlineshops": "Tiendas Virtuales",
     "branddesign": "Diseño de Marca",
     "logodesign": "Diseño de Logo",
+    "weare":"Somos",
+    "whatyouwant":"lo que tu necesites que seamos!",
     "nav": {
       "create": "Creamos.",
       "code": "Programamos.",
@@ -73,6 +75,11 @@
       "shopify": "Shopify",
       "prestashop": "Prestashop",
       "woocommerce": "WooComerce"
+    },
+    "wearelist": {
+      "anagency": "una Agencia.",
+      "astudio": "un Estudio.",
+      "aproject": "un Proyecto."
     }
   },
 

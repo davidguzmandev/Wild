@@ -34,6 +34,8 @@
     "onlineshops": "Online Shops",
     "branddesign": "Brand Design",
     "logodesign": "Logo Design",
+    "weare":"We are",
+    "whatyouwant":"what you need us to be!",
     "nav": {
       "create": "We create.",
       "code": "We program.",
@@ -73,6 +75,11 @@
       "shopify": "Shopify",
       "prestashop": "Prestashop",
       "woocommerce": "WooComerce"
+    },
+    "wearelist": {
+      "anagency": "an Agency.",
+      "astudio": "a Studio.",
+      "aproject": "a Project."
     }
   },
   "login": {
