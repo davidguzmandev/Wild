@@ -3,6 +3,7 @@ import Hero from "@/components/partials/hero";
 import { getDictionary } from "../i18n/dictionary";
 import Services from "@/components/partials/services";
 import WeAre from "@/components/common/weare";
+import WhyUs from "@/components/partials/whyus";
 
 export default async function Home({
   params,
@@ -35,6 +36,7 @@ export default async function Home({
       <WeAre
         translations={t}
       />
+      <WhyUs translations={t}/>
 
       {/* Contact CTA */}
       <section className="bg-blue-600 text-white py-16">

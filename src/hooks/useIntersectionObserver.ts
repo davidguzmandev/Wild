@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useIntersectionObserver = (threshold: number = 0.5): boolean => {
+export const useIntersectionObserver = (threshold: number = 0.5, id): boolean => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
@@ -26,7 +26,7 @@ export const useIntersectionObserver = (threshold: number = 0.5): boolean => {
       { threshold }
     );
 
-    const section = document.querySelector("#services");
+    const section = document.querySelector(`#${id}`);
     if (section && !isMobile) {
       observer.observe(section);
     }

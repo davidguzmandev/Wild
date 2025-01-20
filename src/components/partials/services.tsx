@@ -1,6 +1,6 @@
 "use client";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import ServiceCard from "../common/serviceCard";
+import ServiceCard from "@/components/common/serviceCard";
 
 // Tipado de las props de la página
 interface Service {
@@ -10,7 +10,7 @@ interface Service {
 
 export default function Services({ navTranslations }: { navTranslations: any }) {
 
-  const isVisible = useIntersectionObserver(0.5); // 50% de la sección debe estar visible
+  const isVisible = useIntersectionObserver(0.5, "services"); // 50% de la sección debe estar visible
 
   return (
     <section
