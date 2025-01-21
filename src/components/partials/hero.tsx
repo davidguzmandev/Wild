@@ -18,8 +18,7 @@ export default function Hero({
   
   return (
     <section className="h-screen pt-32 pb-20 relative overflow-hidden">
-      <div className="gradient absolute inset-0 w-full h-full z-0 ">
-
+      <div className="bg-hero bg-cover bg-center absolute inset-0 w-full h-full z-0 ">
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="sm:mt-20 space-y-8 animate-fade-in-down">
