@@ -15,23 +15,37 @@ export default function Hero({
   texts: string[];
 }) {
   const currentText = useRandomText({ texts, interval: 2000 });
-  
+
   return (
     <section className="h-screen pt-32 pb-20 relative overflow-hidden">
-      <div className="bg-hero bg-cover bg-center absolute inset-0 w-full h-full z-0 ">
-      </div>
+      <div className="bg-cover bg-center absolute inset-0 w-full h-full z-0 "></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="sm:mt-20 space-y-8 animate-fade-in-down">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 text-center leading-tight max-sm:h-24">
+          <h1 className="text-xl font-extrabold text-gray-900 mb-6 text-left leading-tight max-sm:h-24 uppercase">
             {navTranslations.we}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
               {" "}
               {currentText}
             </span>
           </h1>
-          <div className="justify-center flex">
-            <p className="text-center md:text-3xl text-2xl text-gray-600 w-3/4 md:w-2/4">
-              {navTranslations.heroText}
+          <div className="flex">
+            <p className="text-left font-semibold md:text-6xl text-xl w-3/4 md:w-2/4">
+              {navTranslations.heroText2.split(" ").map((word, index) => {
+                // Palabras a resaltar
+                const wordsToHighlight = ["sitios", "web", "websites"];
+
+                // Verifica si la palabra actual está en la lista de palabras a resaltar
+                if (wordsToHighlight.includes(word.toLowerCase())) {
+                  return (
+                    <span key={index} className="text-indigo-600 font-bold">
+                      {word}{" "}
+                    </span>
+                  );
+                }
+
+                // Si no es una palabra a resaltar, solo muestra la palabra sin cambios
+                return <span key={index}>{word} </span>;
+              })}
             </p>
           </div>
           <div className="flex max-sm:flex-col justify-center gap-6 mt-10 ">
