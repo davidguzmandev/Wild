@@ -1,83 +1,72 @@
-import { useState, useEffect, useCallback } from 'react';
+class TextAnimator {
+  private texts: string[];
+  private speed: number;
+  private currentWord: string[];
+  private index: number;
+  private isWriting: boolean;
+  private animationTimer: NodeJS.Timeout | null;
 
-interface UseRandomTextProps {
-  texts: string[];
-  interval?: number;
-  typingSpeed?: number;
-  deletingSpeed?: number;
-  delayBetweenWords?: number;
-  cursor?: string;
+  constructor(texts: string[], speed: number = 150) {
+    this.texts = texts;
+    this.speed = speed;
+    this.currentWord = [''];
+    this.index = 0;
+    this.isWriting = true;
+    this.animationTimer = null;
+  }
+
+  private getRandomWord(): string {
+    return this.texts[Math.floor(Math.random() * this.texts.length)];
+  }
+
+  public animate(): { currentWord: string[] } {
+    const word = this.getRandomWord();
+    let currentText = '';
+    let charIndex = 0;
+
+    const step = () => {
+      if (this.isWriting) {
+        if (charIndex < word.length) {
+          currentText += word[charIndex];
+          charIndex++;
+        } else {
+          this.isWriting = false;
+        }
+      } else {
+        if (currentText.length > 0) {
+          currentText = currentText.slice(0, -1);
+        } else {
+          this.isWriting = true;
+          this.index++;
+          if (this.index <= 5) {
+            currentText = '';
+            charIndex = 0;
+            this.currentWord.push(word);
+          } else {
+            if (this.animationTimer) {
+              clearTimeout(this.animationTimer);
+            }
+            return;
+          }
+        }
+      }
+
+      this.currentWord[this.currentWord.length - 1] = currentText;
+      this.animationTimer = setTimeout(step, this.speed);
+    };
+
+    step();
+    return { currentWord: this.currentWord };
+  }
+
+  public stop(): void {
+    if (this.animationTimer) {
+      clearTimeout(this.animationTimer);
+    }
+  }
 }
 
-const texts = [
-  "Create.",
-  "Code.",
-  "Develop.",
-  "Design.",
-  "Imagine.",
-  "Build.",
-  "Innovate.",
-  "Invent.",
-  "Transform.",
-  "Craft.",
-];
-
-export const useRandomText = ({ 
-  texts: customTexts = texts, 
-  interval = 3000,
-  typingSpeed = 150,
-  deletingSpeed = 100,
-  delayBetweenWords = 2000,
-  cursor = "|"
-}: UseRandomTextProps) => {
-  const [currentText, setCurrentText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [wordIndex, setWordIndex] = useState(0);
-  const [isWaiting, setIsWaiting] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
-
-  const currentWord = customTexts[wordIndex];
-
-  // Add cursor blink effect
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
-    }, 500);
-    return () => clearInterval(cursorInterval);
-  }, []);
-
-  const handleTyping = useCallback(() => {
-    setCurrentText(prev => {
-      if (isDeleting) {
-        if (prev.length === 0) {
-          setIsDeleting(false);
-          setWordIndex((prevIndex) => (prevIndex + 1) % customTexts.length);
-          return '';
-        }
-        return prev.slice(0, -1);
-      } else {
-        if (prev === currentWord) {
-          setIsWaiting(true);
-          setTimeout(() => {
-            setIsDeleting(true);
-            setIsWaiting(false);
-          }, delayBetweenWords);
-          return prev;
-        }
-        return currentWord.slice(0, prev.length + 1);
-      }
-    });
-  }, [currentWord, isDeleting, customTexts.length, delayBetweenWords]);
-
-  useEffect(() => {
-    if (isWaiting) return;
-
-    const timer = setInterval(() => {
-      handleTyping();
-    }, isDeleting ? deletingSpeed : typingSpeed);
-
-    return () => clearInterval(timer);
-  }, [handleTyping, isDeleting, isWaiting, deletingSpeed, typingSpeed]);
-
-  return `${currentText}${showCursor ? cursor : ''}`;
-};
+export default function useRandomText(texts: string[], speed: number = 150): { currentWord: string[] } {
+  const animator = new TextAnimator(texts, speed);
+  return animator.animate();
+}

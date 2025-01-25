@@ -1,11 +1,11 @@
-"use client";
-import { useRandomText } from "@/hooks/useRandomText";
+import useRandomText from "@/hooks/useRandomText";
 import {
   IconCoffee,
   IconMug,
   IconEye,
   IconEyeClosed,
 } from "@tabler/icons-react";
+import Spline from "@splinetool/react-spline";
 
 export default function Hero({
   navTranslations,
@@ -14,10 +14,11 @@ export default function Hero({
   navTranslations: any;
   texts: string[];
 }) {
-  const currentText = useRandomText({ texts, interval: 2000 });
+  const { currentWord } = useRandomText(texts);
 
   return (
     <section className="h-screen pt-32 pb-20 relative overflow-hidden">
+      {/* <Spline scene="https://prod.spline.design/EVR1xVIOaCzLDMlz/scene.splinecode" /> */}
       <div className="bg-cover bg-center absolute inset-0 w-full h-full z-0 "></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="sm:mt-20 space-y-8 animate-fade-in-down">
@@ -25,7 +26,9 @@ export default function Hero({
             {navTranslations.we}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
               {" "}
-              {currentText}
+              {currentWord.map((word, index) => (
+                <li key={index}>{word}</li>
+              ))}
             </span>
           </h1>
           <div className="flex">
