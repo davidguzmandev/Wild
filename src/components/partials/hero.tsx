@@ -14,7 +14,7 @@ export default function Hero({
   navTranslations: any;
   texts: string[];
 }) {
-  const { currentWord } = useRandomText(texts);
+  const currentWord  = useRandomText(texts);
 
   return (
     <section className="h-screen pt-32 pb-20 relative overflow-hidden">
@@ -26,9 +26,7 @@ export default function Hero({
             {navTranslations.we}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
               {" "}
-              {currentWord.map((word, index) => (
-                <li key={index}>{word}</li>
-              ))}
+              {currentWord}
             </span>
           </h1>
           <div className="flex">
