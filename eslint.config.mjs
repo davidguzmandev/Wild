@@ -1,16 +1,20 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import globals from "globals";
+import js from "@eslint/js";
+import ts from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
-
-export default eslintConfig;
+/** @type {import('eslint').Linter.Config} */
+export default {
+  files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+  languageOptions: {
+    globals: globals.browser,
+    parser: tsParser, // Agregamos el parser para TypeScript
+  },
+  plugins: {
+    "@typescript-eslint": ts,
+  },
+  rules: {
+    ...js.configs.recommended.rules, // Configuración recomendada para JavaScript
+    ...ts.configs.recommended.rules, // Configuración recomendada para TypeScript
+  },
+};
