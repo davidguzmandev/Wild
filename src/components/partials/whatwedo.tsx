@@ -1,6 +1,6 @@
 "use client";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import ServiceCard from "@/components/common/serviceCard";
+import ClientSideAnimation from "../common/clientsideanimation";
 
 // Tipado de las props de la página
 interface Service {
@@ -24,6 +24,9 @@ export default function WhatWeDo({ translations }: { translations: any }) {
         <h2 className="sm:text-7xl text-6xl font-bold uppercase text-left mb-12 text-stroke">
         {translations.whatwedo}
         </h2>
+      </div>
+      <div>
+        <ClientSideAnimation />
       </div>
     </section>
   );
