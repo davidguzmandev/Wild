@@ -1,3 +1,4 @@
+'use client'
 import useRandomText from "@/hooks/useRandomText";
 import {
   IconCoffee,
@@ -6,6 +7,10 @@ import {
   IconEyeClosed,
 } from "@tabler/icons-react";
 
+interface RandomTextComponentProps {
+  words: string[];
+}
+
 export default function Hero({
   navTranslations,
   texts,
@@ -13,18 +18,18 @@ export default function Hero({
   navTranslations: any;
   texts: string[];
 }) {
-  const currentWord  = useRandomText(texts);
+  const { currentWord, cursor } = useRandomText({ words: texts });
 
   return (
     <section className="h-screen pt-32 pb-20 relative overflow-hidden">
       <div className="bg-cover bg-center absolute inset-0 w-full h-full z-0 "></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="sm:mt-20 space-y-8 animate-fade-in-down">
-          <h1 className="text-xl font-extrabold text-gray-900 mb-6 text-left leading-tight max-sm:h-24 uppercase">
+          <h1 className="text-lg font-bold text-gray-900 mb-6 text-left leading-tight max-sm:h-24 uppercase">
             {navTranslations.we}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
               {" "}
-              {currentWord}
+              {currentWord}<span className="text-indigo-500">{cursor}</span>
             </span>
           </h1>
           <div className="flex">

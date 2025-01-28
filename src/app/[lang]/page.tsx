@@ -4,6 +4,7 @@ import { getDictionary } from "../i18n/dictionary";
 import Services from "@/components/partials/services";
 import WeAre from "@/components/common/weare";
 import WhyUs from "@/components/partials/whyus";
+import WhatWeDo from "@/components/partials/whatwedo";
 
 export default async function Home({
   params,
@@ -32,7 +33,7 @@ export default async function Home({
         ]}
       />
 
-      <Services navTranslations={t} />
+      <WhatWeDo translations={t} />
       <WeAre
         translations={t}
       />
