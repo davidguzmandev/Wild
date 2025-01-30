@@ -2,12 +2,6 @@
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import ClientSideAnimation from "../common/clientsideanimation";
 
-// Tipado de las props de la página
-interface Service {
-  title: string;
-  link: string;
-}
-
 export default function WhatWeDo({ translations }: { translations: any }) {
   const isVisible = useIntersectionObserver(0.5, "services"); // 50% de la sección debe estar visible
 
