@@ -1,12 +1,10 @@
-'use client'
+"use client";
 import useRandomText from "@/hooks/useRandomText";
 import {
   IconCoffee,
   IconMug,
-  IconEye,
-  IconEyeClosed,
 } from "@tabler/icons-react";
-import HeroBanner from "../common/herobanner";
+import HeroBanner from "@/components/common/herobanner";
 
 interface RandomTextComponentProps {
   words: string[];
@@ -22,22 +20,22 @@ export default function Hero({
   const { currentWord, cursor } = useRandomText({ words: texts });
 
   return (
-    <section className="h-screen pt-32 pb-20 relative overflow-hidden">
-      <div className="bg-cover bg-center absolute inset-0 w-full z-0 ">
+    <section className="md:h-screen pt-32 pb-20 px-2 relative flex flex-col overflow-hidden">
+      <div className="bg-cover bg-center md:absolute flex justify-center z-0 md:order-2 order-3">
         <HeroBanner />
-
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1">
         <div className="sm:mt-20 space-y-8 animate-fade-in-down">
           <h1 className="text-lg font-bold text-gray-900 mb-6 text-left leading-tight max-sm:h-24 uppercase">
             {navTranslations.we}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
               {" "}
-              {currentWord}<span className="text-indigo-500">{cursor}</span>
+              {currentWord}
+              <span className="text-indigo-500">{cursor}</span>
             </span>
           </h1>
           <div className="flex">
-            <p className="text-left font-semibold md:text-6xl text-xl w-3/4 md:w-2/4">
+            <h2 className="text-left font-semibold text-6xl w-1/2">
               {navTranslations.heroText2.split(" ").map((word, index) => {
                 // Palabras a resaltar
                 const wordsToHighlight = ["sitios", "web", "websites"];
@@ -54,7 +52,7 @@ export default function Hero({
                 // Si no es una palabra a resaltar, solo muestra la palabra sin cambios
                 return <span key={index}>{word} </span>;
               })}
-            </p>
+            </h2>
           </div>
           <div className="flex max-sm:flex-col  gap-6 mt-10 ">
             <button

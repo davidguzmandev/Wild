@@ -3,111 +3,85 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import animationConfig from "@/config/animationConfig";
 import Banner1 from "@/images/banner1.webp";
 import Banner2 from "@/images/banner2.webp";
 import Banner3 from "@/images/banner3.webp";
 import Banner4 from "@/images/banner4.webp";
 
 const HeroBanner = () => {
-  const bannerRef = useRef<HTMLElement | null>(null);
   const imageRef1 = useRef<HTMLDivElement | null>(null);
   const imageRef2 = useRef<HTMLDivElement | null>(null);
   const imageRef3 = useRef<HTMLDivElement | null>(null);
   const imageRef4 = useRef<HTMLDivElement | null>(null);
 
-  // Función reutilizable para animar imágenes
-  const animateImage = (
-    imageRef: React.RefObject<HTMLDivElement | null>,
-    initialProps: { opacity: number; y: string; x: string },
-    finalProps: {
-      opacity: number;
-      y: string;
-      x: string;
-      duration: number;
-      ease: string;
-    }
-  ) => {
-    if (imageRef.current) {
-      gsap.fromTo(imageRef.current, initialProps, finalProps);
-    }
-  };
-
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        window.location.reload();
+      }, 200); // Ajusta el tiempo de debounce según sea necesario
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    const windowSize = window.innerWidth;
+    console.log(windowSize);
+    const config =
+      windowSize >= 1536
+        ? animationConfig[1536]
+        : windowSize >= 1280
+          ? animationConfig[1280]
+          : windowSize >= 1024
+            ? animationConfig[1024]
+            : windowSize >= 768
+              ? animationConfig[768]
+              : windowSize >= 640
+                ? animationConfig[640]
+                : animationConfig.default;
+
     const tl = gsap.timeline();
 
-    // Animación de entrada para el banner
-    tl.from(bannerRef.current, {
-      opacity: 0,
-      y: -60,
-      duration: 1,
-      ease: "power3.out",
-    });
+    tl.fromTo(imageRef1.current, config.image1.from, config.image1.to);
 
-    // Animación de la primera imagen (desde la izquierda)
-    animateImage(
-      imageRef1,
-      { opacity: 0, y: "120", x: "-280" },
-      { opacity: 1, y: "20", x: "-280", duration: 1.5, ease: "power3.out" }
-    );
+    tl.fromTo(imageRef2.current, config.image2.from, config.image2.to, "-=0.4");
 
-    // Animación de la segunda imagen (desde la derecha)
-    animateImage(
-      imageRef2,
-      { opacity: 0, y: "110", x: "180" },
-      { opacity: 1, y: "110", x: "115", duration: 1.5, ease: "power3.out" }
-    );
+    tl.fromTo(imageRef3.current, config.image3.from, config.image3.to, "-=0.4");
 
-    // Animación de la tercero imagen (desde la derecha)
-    animateImage(
-      imageRef3,
-      { opacity: 0, y: "-80", x: "-30" },
-      { opacity: 1, y: "20", x: "-30", duration: 2.5, ease: "power3.out" }
-    );
+    tl.fromTo(imageRef4.current, config.image4.from, config.image4.to, "-=0.4");
 
-    // Animación de la cuarto imagen (desde la derecha)
-    animateImage(
-      imageRef4,
-      { opacity: 0, y: "-30", x: "-250" },
-      { opacity: 1, y: "120", x: "-90", duration: 1.5, ease: "power3.out" }
-    );
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
-    <section
-      ref={bannerRef}
-      className="relative flex flex-col items-center justify-center h-screen overflow-hidden">
-      <div className="relative w-full flex justify-center items-center">
+    <section className="relative flex flex-col items-center justify-center h-screen overflow-hidden max-md:pt-28">
+      <div className="relative w-dvw md:flex md:justify-center md:items-center max-lg:pr-24 h-screen">
         <div
           ref={imageRef1}
-          className="absolute -top-56 -right-36 opacity-0 w-2/5"
-          >
+          className="absolute opacity-0 2xl:w-[700px] xl:w-[600px] lg:w-[450px] w-[300px]">
           <Image
             src={Banner1}
             alt="Banner Image 1"
-            layout="responsive"
-            width={100}
-            height={100}
-            className="object-cover"
+            width={700}
+            height={700}
             priority
           />
         </div>
-        <div
-          ref={imageRef2}
-          className="absolute -top-56 -right-36 opacity-0 w-2/5"
-          >
+        <div ref={imageRef2} className="absolute opacity-0">
           <Image
             src={Banner2}
             alt="Banner Image 2"
             width={30}
             height={30}
-            className="object-cover"
             priority
           />
         </div>
-        <div
-          ref={imageRef3}
-          className="absolute -top-56 -right-36 opacity-0 w-2/5"
-          >
+        <div ref={imageRef3} className="absolute opacity-0">
           <Image
             src={Banner3}
             alt="Banner Image 3"
@@ -117,10 +91,7 @@ const HeroBanner = () => {
             priority
           />
         </div>
-        <div
-          ref={imageRef4}
-          className="absolute -top-56 -right-36 opacity-0 w-2/5"
-          >
+        <div ref={imageRef4} className="absolute opacity-0">
           <Image
             src={Banner4}
             alt="Banner Image 4"
