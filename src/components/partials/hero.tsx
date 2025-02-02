@@ -26,7 +26,7 @@ export default function Hero({
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1">
         <div className="sm:mt-20 space-y-8 animate-fade-in-down">
-          <h1 className="text-lg font-bold text-gray-900 mb-6 text-left leading-tight max-sm:h-24 uppercase">
+          <h1 className="text-lg font-bold text-gray-900 mb-6 text-left leading-tight uppercase">
             {navTranslations.we}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
               {" "}

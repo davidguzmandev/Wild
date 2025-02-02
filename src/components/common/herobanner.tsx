@@ -61,7 +61,7 @@ const HeroBanner = () => {
       <div className="relative w-dvw md:flex md:justify-center md:items-center max-lg:pr-24 h-screen">
         <div
           ref={imageRefs.image1}
-          className="absolute opacity-0 2xl:w-[700px] xl:w-[600px] lg:w-[450px] w-[300px]">
+          className="absolute opacity-0 2xl:w-[700px] xl:w-[600px] lg:w-[450px] md:w-[300]">
           <Image
             src={Banner1}
             alt="Banner Image 1"
