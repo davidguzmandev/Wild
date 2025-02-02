@@ -56,12 +56,12 @@ export default function Hero({
           </div>
           <div className="flex max-sm:flex-col  gap-6 mt-10 ">
             <button
-              className="relative gradient-button bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold text-white rounded-md p-2 hover:text-violet-500 group hover:shadow-xl hover:scale-105 transition-all duration-600"
+              className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full p-4 hover:text-violet-500 group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-wide"
               aria-label={navTranslations.talktous}>
               <span className="inline-flex items-center gap-2">
                 {navTranslations.talktous}{" "}
-                <IconMug stroke={2} className="group-hover:hidden" />{" "}
-                <IconCoffee stroke={2} className="hidden group-hover:block" />
+                <IconMug stroke={2} className="group-hover:hidden group-hover:text-white" />{" "}
+                <IconCoffee stroke={2} className="hidden group-hover:block group-hover:text-white" />
               </span>
             </button>
           </div>

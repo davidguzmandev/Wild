@@ -58,10 +58,11 @@ body {
   transition: transform 0.3s ease-in-out;
   z-index: 0;
   transform: translateX(-100%);
+  border-radius: 30px;
 }
 
 .gradient-button:hover::before {
-  transform: translateX(100%); /* Se desplaza a la derecha */
+  transform: translateX(74%); /* Se desplaza a la derecha */
 }
 
 .gradient-button span {
