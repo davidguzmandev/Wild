@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import animationConfig from "@/config/animationConfig";
@@ -10,25 +10,30 @@ import Banner3 from "@/images/banner3.webp";
 import Banner4 from "@/images/banner4.webp";
 
 const HeroBanner = () => {
-  const imageRef1 = useRef<HTMLDivElement | null>(null);
-  const imageRef2 = useRef<HTMLDivElement | null>(null);
-  const imageRef3 = useRef<HTMLDivElement | null>(null);
-  const imageRef4 = useRef<HTMLDivElement | null>(null);
+  const imageRefs = {
+    image1: useRef<HTMLDivElement | null>(null),
+    image2: useRef<HTMLDivElement | null>(null),
+    image3: useRef<HTMLDivElement | null>(null),
+    image4: useRef<HTMLDivElement | null>(null),
+  };
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  const handleResize = useCallback(() => {
+    let timeoutId: NodeJS.Timeout;
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      setWindowSize(window.innerWidth);
+    }, 200);
+  }, []);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-
-    const handleResize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        window.location.reload();
-      }, 200); // Ajusta el tiempo de debounce según sea necesario
-    };
-
     window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
 
-    const windowSize = window.innerWidth;
-    console.log(windowSize);
+  useEffect(() => {
     const config =
       windowSize >= 1536
         ? animationConfig[1536]
@@ -44,25 +49,18 @@ const HeroBanner = () => {
 
     const tl = gsap.timeline();
 
-    tl.fromTo(imageRef1.current, config.image1.from, config.image1.to);
+    tl.fromTo(imageRefs.image1.current, config.image1.from, config.image1.to);
+    tl.fromTo(imageRefs.image2.current, config.image2.from, config.image2.to, "-=0.4");
+    tl.fromTo(imageRefs.image3.current, config.image3.from, config.image3.to, "-=0.4");
+    tl.fromTo(imageRefs.image4.current, config.image4.from, config.image4.to, "-=0.4");
 
-    tl.fromTo(imageRef2.current, config.image2.from, config.image2.to, "-=0.4");
-
-    tl.fromTo(imageRef3.current, config.image3.from, config.image3.to, "-=0.4");
-
-    tl.fromTo(imageRef4.current, config.image4.from, config.image4.to, "-=0.4");
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      clearTimeout(timeoutId);
-    };
-  }, []);
+  }, [windowSize]);
 
   return (
     <section className="relative flex flex-col items-center justify-center h-screen overflow-hidden max-md:pt-28">
       <div className="relative w-dvw md:flex md:justify-center md:items-center max-lg:pr-24 h-screen">
         <div
-          ref={imageRef1}
+          ref={imageRefs.image1}
           className="absolute opacity-0 2xl:w-[700px] xl:w-[600px] lg:w-[450px] w-[300px]">
           <Image
             src={Banner1}
@@ -72,7 +70,7 @@ const HeroBanner = () => {
             priority
           />
         </div>
-        <div ref={imageRef2} className="absolute opacity-0">
+        <div ref={imageRefs.image2} className="absolute opacity-0">
           <Image
             src={Banner2}
             alt="Banner Image 2"
@@ -81,7 +79,7 @@ const HeroBanner = () => {
             priority
           />
         </div>
-        <div ref={imageRef3} className="absolute opacity-0">
+        <div ref={imageRefs.image3} className="absolute opacity-0">
           <Image
             src={Banner3}
             alt="Banner Image 3"
@@ -91,7 +89,7 @@ const HeroBanner = () => {
             priority
           />
         </div>
-        <div ref={imageRef4} className="absolute opacity-0">
+        <div ref={imageRefs.image4} className="absolute opacity-0">
           <Image
             src={Banner4}
             alt="Banner Image 4"

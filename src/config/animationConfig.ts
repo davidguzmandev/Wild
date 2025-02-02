@@ -17,7 +17,7 @@ interface AnimationConfig {
   [breakpoint: number]: Record<string, ImageAnimation>;
 }
 
-const animationConfig = {
+const animationConfig: AnimationConfig = {
     default: {
       image1: {
         from: { opacity: 0, y: 120, x: 290, scale: 1 },
@@ -63,6 +63,17 @@ const animationConfig = {
       },
     },
     1536: {
+      image1: {
+        from: { opacity: 0, y: 120, x: 290, scale: 1 },
+        to: {
+          opacity: 1,
+          y: -90,
+          x: 290,
+          scale: 1,
+          duration: 1.5,
+          ease: "power3.out",
+        },
+      },
       image2: {
         from: { opacity: 0, y: -230, x: 490, scale: 0 },
         to: {
@@ -95,6 +106,17 @@ const animationConfig = {
       },
     },
     1280: {
+      image1: {
+        from: { opacity: 0, y: 120, x: 290, scale: 1 },
+        to: {
+          opacity: 1,
+          y: -90,
+          x: 290,
+          scale: 1,
+          duration: 1.5,
+          ease: "power3.out",
+        },
+      },
       image2: {
         from: { opacity: 0, y: -230, x: 460, scale: 0 },
         to: {
@@ -127,6 +149,17 @@ const animationConfig = {
       },
     },
     1024: {
+      image1: {
+        from: { opacity: 0, y: 120, x: 290, scale: 1 },
+        to: {
+          opacity: 1,
+          y: -90,
+          x: 290,
+          scale: 1,
+          duration: 1.5,
+          ease: "power3.out",
+        },
+      },
       image2: {
         from: { opacity: 0, y: -230, x: 460, scale: 0 },
         to: {
@@ -164,7 +197,7 @@ const animationConfig = {
         to: {
           opacity: 1,
           y: -90,
-          x: 90,
+          x: 290,
           scale: 1,
           duration: 1.5,
           ease: "power3.out",
@@ -202,6 +235,17 @@ const animationConfig = {
       },
     },
     640: {
+      image1: {
+        from: { opacity: 0, y: 120, x: 0, scale: 1 },
+        to: {
+          opacity: 1,
+          y: -90,
+          x: 0,
+          scale: 1,
+          duration: 1.5,
+          ease: "power3.out",
+        },
+      },
       image2: {
         from: { opacity: 0, y: -230, x: 460, scale: 0 },
         to: {

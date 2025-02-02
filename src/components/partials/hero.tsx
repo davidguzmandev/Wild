@@ -20,7 +20,7 @@ export default function Hero({
   const { currentWord, cursor } = useRandomText({ words: texts });
 
   return (
-    <section className="md:h-screen pt-32 pb-20 px-2 relative flex flex-col overflow-hidden">
+    <section className="md:h-screen pt-32 pb-8 px-2 relative flex flex-col overflow-hidden">
       <div className="bg-cover bg-center md:absolute flex justify-center z-0 md:order-2 order-3">
         <HeroBanner />
       </div>
