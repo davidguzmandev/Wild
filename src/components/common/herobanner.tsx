@@ -16,7 +16,7 @@ const HeroBanner = () => {
     image3: useRef<HTMLDivElement | null>(null),
     image4: useRef<HTMLDivElement | null>(null),
   };
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [windowSize, setWindowSize] = useState<number>(0);
 
   const handleResize = useCallback(() => {
     let timeoutId: NodeJS.Timeout;
@@ -34,6 +34,7 @@ const HeroBanner = () => {
   }, [handleResize]);
 
   useEffect(() => {
+    setWindowSize(window.innerWidth);
     const config =
       windowSize >= 1536
         ? animationConfig[1536]

@@ -15,7 +15,7 @@ export default async function Home({
   const t = await (await getDictionary(lang)).home;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen scroll-smooth">
       <Header navTranslations={t} />
       <Hero
         navTranslations={t}
