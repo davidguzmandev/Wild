@@ -1,10 +1,11 @@
 import Header from "@/components/partials/header";
 import Hero from "@/components/partials/hero";
 import { getDictionary } from "../i18n/dictionary";
-import Services from "@/components/partials/services";
 import WeAre from "@/components/common/weare";
 import WhyUs from "@/components/partials/whyus";
 import WhatWeDo from "@/components/partials/whatwedo";
+import GsapInitializer from "@/components/common/gsapInitializer";
+
 
 export default async function Home({
   params,
@@ -14,8 +15,10 @@ export default async function Home({
   const lang = (await params).lang;
   const t = await (await getDictionary(lang)).home;
 
+
   return (
     <div className="min-h-screen scroll-smooth">
+      <GsapInitializer />
       <Header navTranslations={t} />
       <Hero
         navTranslations={t}
@@ -33,11 +36,11 @@ export default async function Home({
         ]}
       />
 
-      <WhatWeDo translations={t} />
+      <WhatWeDo translations={t}/>
       <WeAre
-        translations={t}
+        translations={t} className="section"
       />
-      <WhyUs translations={t}/>
+      <WhyUs translations={t} className="section"/>
 
      
     </div>

@@ -1,8 +1,8 @@
 "use client";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import ClientSideAnimation from "../common/clientsideanimation";
+import ClientSideAnimation from "@/components/common/clientsideanimation";
 
-export default function WhatWeDo({ translations }: { translations: any }) {
+export default function WhatWeDo({ translations }: { translations: any;}) {
   const isVisible = useIntersectionObserver(0.5, "services"); // 50% de la sección debe estar visible
 
   return (
@@ -10,7 +10,7 @@ export default function WhatWeDo({ translations }: { translations: any }) {
       id="services"
       aria-labelledby="services-heading"
       aria-hidden={!isVisible}
-      className={`py-20 transition-all duration-500 ease-out ${
+      className={`py-20 transition-all duration-500 ease-out $ ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}>
       <div className="max-w-full px-8 sm:px-6 lg:px-20">

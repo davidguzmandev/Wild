@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
-import animationConfig from "@/config/animationConfig";
+import animationConfig from "@/utils/animationConfig";
 import Banner1 from "@/images/banner1.webp";
 import Banner2 from "@/images/banner2.webp";
 import Banner3 from "@/images/banner3.webp";
