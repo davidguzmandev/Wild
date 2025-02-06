@@ -131,3 +131,8 @@ body {
     transform: translateY(-80px); /* Altura de un solo elemento */
   }
 }
+
+/* Recorte de imagenes */
+.clip-polygon {
+  clip-path: polygon(36% 0, 82% 0, 51% 100%, 7% 100%);
+}
