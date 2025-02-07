@@ -14,7 +14,7 @@ export default function WhatWeDo({ translations }: { translations: any }) {
 
   useEffect(() => {
     // Inicializa las animaciones para cada servicio
-    servicesRef.current.forEach((service, index) => {
+    /* servicesRef.current.forEach((service, index) => {
       gsap.from(service, {
         opacity: 0,
         y: 50,
@@ -22,10 +22,10 @@ export default function WhatWeDo({ translations }: { translations: any }) {
         ease: "power3.out",
         scrollTrigger: {
           trigger: service,
-          start: "top 80%", // Comienza la animación cuando el elemento está al 80% de la vista
+          start: "top 40%", // Comienza la animación cuando el elemento está al 80% de la vista
           end: "bottom top", // Asegura que la animación se complete antes de salir del viewport
           toggleActions: "play none none reverse", // Controla cómo se comporta la animación
-          markers: false, // Opcional: Puedes activar markers para depurar el comportamiento del ScrollTrigger
+          markers: true, // Opcional: Puedes activar markers para depurar el comportamiento del ScrollTrigger
         },
       });
     });
@@ -33,20 +33,64 @@ export default function WhatWeDo({ translations }: { translations: any }) {
     // Solo bloquea el scroll dentro de la sección de servicios
     ScrollTrigger.create({
       trigger: "#services",
-      start: "top center", // Cuando la sección de servicios llega al principio de la ventana
+      start: "top top", // Cuando la sección de servicios llega al principio de la ventana
       end: "bottom top", // Cuando la sección de servicios ya no esté en la ventana
       pin: true, // Esto bloquea el scroll dentro de esta sección
       scrub: true, // Sincroniza el scroll con las animaciones
       markers: false, // Puedes activar los markers para depurar si lo necesitas
-    });
-  }, []);
+    }); */
 
-  const addServiceRef = (el: HTMLDivElement) => {
+
+    /* var scrollAnim = gsap.timeline({
+      scrollTrigger: {
+        trigger: "body",
+        start: "top 40%",
+        scrub: 0.6, // process by scrolling
+        markers: true, 
+        toggleActions: 'play none none reverse',
+      }
+    });
+    scrollAnim
+      .to('.svgbox--1', {
+        x: '50vw',
+        ease: "steps(30)",
+      })
+      .to('.svgbox--2', {
+        x: '-50vw',
+        ease: "steps(20)",
+      }, '<')
+      .to('h1', {
+        y: -30,
+        ease: "steps(60)"
+      }, '<');
+  
+ */
+ /*  const addServiceRef = (el: HTMLDivElement) => {
     if (el && !servicesRef.current.includes(el)) {
       servicesRef.current.push(el);
     }
   };
+ */
 
+  gsap.utils.toArray(".section").forEach(section => {
+    gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "center center",
+          markers: true, 
+          // makes the height of the scrolling (while pinning) match the width, thus the speed remains constant (vertical/horizontal)
+          end: () => "+=" + section.offsetWidth, 
+          scrub: true,
+          pin: true,
+          anticipatePin: 1
+        },
+        defaults: {ease: "power3.out"}
+      });
+    // animate the container one way...
+    
+  });
+
+ }, []);
   return (
     <section
       id="services"
@@ -58,7 +102,7 @@ export default function WhatWeDo({ translations }: { translations: any }) {
           {translations.whatwedo}
         </p>
       </div>
-      <div ref={addServiceRef} className="flex justify-center py-52">
+      <div  className="section flex justify-center py-52">
         <p className="sm:text-9xl text-xl font-bold uppercase text-stroke z-0">
           {translations.listweb.websites}
         </p>
@@ -72,7 +116,7 @@ export default function WhatWeDo({ translations }: { translations: any }) {
           />
         </div>
       </div>
-      <div ref={addServiceRef} className="flex justify-center py-52">
+      <div className="section flex justify-center py-52">
         <p className="sm:text-9xl text-xl font-bold uppercase text-stroke z-0">
           {translations.listweb.webapp}
         </p>
