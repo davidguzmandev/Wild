@@ -52,7 +52,7 @@ body {
   position: absolute;
   top: 0;
   left: -100%; /* Inicialmente fuera del botón */
-  width: 100%;
+  width: 90%;
   height: 100%;
   background: white;
   transition: transform 0.3s ease-in-out;
@@ -62,7 +62,7 @@ body {
 }
 
 .gradient-button:hover::before {
-  transform: translateX(74%); /* Se desplaza a la derecha */
+  transform: translateX(185%); /* Se desplaza a la derecha */
 }
 
 .gradient-button span {

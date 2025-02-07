@@ -33,7 +33,7 @@ export default function WhatWeDo({ translations }: { translations: any }) {
     // Solo bloquea el scroll dentro de la sección de servicios
     ScrollTrigger.create({
       trigger: "#services",
-      start: "top top", // Cuando la sección de servicios llega al principio de la ventana
+      start: "top center", // Cuando la sección de servicios llega al principio de la ventana
       end: "bottom top", // Cuando la sección de servicios ya no esté en la ventana
       pin: true, // Esto bloquea el scroll dentro de esta sección
       scrub: true, // Sincroniza el scroll con las animaciones
