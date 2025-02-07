@@ -9,6 +9,7 @@
   --s: 6;
   --h: 80;
   --speed: 1s;
+  overflow-x: hidden;
 }
 /* Activar el tema cuando se configure el tema dark */
 /* @media (prefers-color-scheme: dark) {
