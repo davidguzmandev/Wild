@@ -20,11 +20,11 @@ export default function Hero({
   const { currentWord, cursor } = useRandomText({ words: texts });
 
   return (
-    <section className={`md:h-screen pt-32 pb-8 px-2 relative flex flex-col overflow-hidden`}>
+    <section className="md:h-screen pb-8 px-2 relative flex flex-col overflow-hidden justify-center">
       <div className="bg-cover bg-center md:absolute flex justify-center z-0 md:order-2 order-3">
         <HeroBanner />
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1">
+      <div className="justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1 ">
         <div className="sm:mt-20 space-y-8 animate-fade-in-down">
           <h1 className="text-lg font-bold text-gray-900 mb-6 text-left leading-tight uppercase">
             {navTranslations.we}

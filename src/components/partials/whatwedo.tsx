@@ -13,12 +13,12 @@ export default function WhatWeDo({ translations }: { translations: any }) {
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".section",
-        start: "top 40%",
-        end: "+=1800px",
+        trigger: ".services",
+        start: "top top",
+        end: () => `+=${tl.duration() * 2000}`,
         scrub: 1,
         markers: true,
-        pin: ".services",
+        pin: true,
       },
     });
 
@@ -34,15 +34,15 @@ export default function WhatWeDo({ translations }: { translations: any }) {
     tl.to(".i1", { opacity: 0, duration: 0.5 }, "-=0.5");
 
     //Segunda seccion
-    tl.from(".s1", {
+    tl.from(".s2", {
       x: -1900,
       opacity: 0,
       duration: 1,
       ease: "power4.out",
     });
-    tl.from(".i1", { opacity: 0, duration: 0.5 });
-    tl.to(".s1", { x: 1900, opacity: 0, duration: 0.5, ease: "power4.in" });
-    tl.to(".i1", { opacity: 0, duration: 0.5 }, "-=0.5");
+    tl.from(".i2", { opacity: 0, duration: 0.5 });
+    tl.to(".s2", { x: 1900, opacity: 0, duration: 0.5, ease: "power4.in" });
+    tl.to(".i2", { opacity: 0, duration: 0.5 }, "-=0.5");
   }, []);
 
   return (
@@ -55,8 +55,8 @@ export default function WhatWeDo({ translations }: { translations: any }) {
           {translations.whatwedo}
         </p>
       </div>
-      <div className="section flex justify-center py-52">
-        <p className="s1 sm:text-9xl text-xl font-bold uppercase text-stroke z-0">
+      <div className="section flex justify-center py-40">
+        <p className="absolute s1 sm:text-9xl text-xl font-bold uppercase text-stroke z-0">
           {translations.listweb.websites}
         </p>
         <div className="i1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
@@ -68,12 +68,11 @@ export default function WhatWeDo({ translations }: { translations: any }) {
             className="clip-polygon"
           />
         </div>
-      </div>
-      <div className="section flex justify-center py-52">
-        <p className="s2 sm:text-9xl text-xl font-bold uppercase text-stroke z-0">
-          {translations.listweb.webapp}
-        </p>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+
+        <div className="s2 absolute sm:text-9xl text-xl font-bold uppercase text-stroke z-0">
+          {translations.listdevelop.webapp}
+        </div>
+        <div className="i2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
           <Image
             src={Webapp}
             alt="Webapps"
