@@ -38,9 +38,9 @@ export default async function Home({
 
       <WhatWeDo translations={t}/>
       <WeAre
-        translations={t} className="section"
+        translations={t}
       />
-      <WhyUs translations={t} className="section"/>
+      <WhyUs translations={t}/>
 
      
     </div>

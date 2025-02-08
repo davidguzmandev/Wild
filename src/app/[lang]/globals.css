@@ -132,33 +132,3 @@ body {
     transform: translateY(-80px); /* Altura de un solo elemento */
   }
 }
-
-
-
-/* Recorte de imagenes y animacion*/
-
-.animate-fadeIn {
-  opacity: 0; /* Start invisible */
-  animation: fadeIn 1s ease-in-out forwards; 
-}
-
-.animate-fadeOut {
-  opacity: 1; /* Start visible */
-  animation: fadeOut 1s ease-in-out forwards; 
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1; /* End visible */
-  }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0; /* End invisible */
-  }
-}
-
-.clip-polygon {
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
-}
