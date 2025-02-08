@@ -2,57 +2,21 @@
 import Image from "next/image";
 import Websites from "@/images/websites.webp";
 import Webapp from "@/images/webapp.webp";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect } from "react";
-
-// Registra el plugin ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
 
 export default function WhatWeDo({ translations }: { translations: any }) {
-  useEffect(() => {
-    // Limpia cualquier ScrollTrigger existente
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".services",
-        start: "top top",
-        end: () => `+=${tl.duration() * 2000}`,
-        scrub: 1,
-        markers: true,
-        pin: true,
-      },
-    });
-
-    //Primera seccion
-    tl.from(".s1", {
-      x: "-50%",
-      opacity: 0,
-      duration: 1,
-      ease: "power4.out",
-    });
-    tl.from(".i1", { opacity: 0, y: "20%", duration: 0.5 }, "-=0.5");
-    tl.to(".s1", { x: "50%", opacity: 0, duration: 0.5, ease: "power4.in" });
-    tl.to(".i1", { opacity: 0, y: "-30%", duration: 0.5 }, "-=0.5");
-
-    //Segunda seccion
-    tl.from(".s2", {
-      x: "-50%",
-      opacity: 0,
-      duration: 1,
-      ease: "power4.out",
-    });
-    tl.from(".i2", { opacity: 0, y: "20%", duration: 0.5 }, "-=0.5");
-    tl.to(".s2", { x: "50%", opacity: 0, duration: 0.5, ease: "power4.in" });
-    tl.to(".i2", { opacity: 0, y: "-30%", duration: 0.5 }, "-=0.5");
-    
-    return () => {
-      // Limpia las animaciones al desmontar el componente
-      tl.kill();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+  const services = [
+    {
+      title: translations.listweb.websites,
+      image: Websites,
+      alt: "Websites",
+    },
+    {
+      title: translations.listdevelop.webapp,
+      image: Webapp,
+      alt: "Webapps",
+    },
+    // Add more divs as needed
+  ];
 
   return (
     <section
@@ -64,11 +28,11 @@ export default function WhatWeDo({ translations }: { translations: any }) {
           {translations.whatwedo}
         </p>
       </div>
-      <div className="section flex justify-center py-40">
-        <div className="absolute s1 sm:text-9xl text-xl font-bold uppercase text-stroke">
+      <div className="flex justify-center py-40">
+        <div className="sm:text-9xl text-xl font-bold uppercase text-stroke">
           {translations.listweb.websites}
         </div>
-        <div className="i1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <Image
             src={Websites}
             alt="Websites"
@@ -78,10 +42,10 @@ export default function WhatWeDo({ translations }: { translations: any }) {
           />
         </div>
 
-        <div className="s2 absolute sm:text-9xl text-xl font-bold uppercase text-stroke ">
+        <div className="sm:text-9xl text-xl font-bold uppercase text-stroke ">
           {translations.listdevelop.webapp}
         </div>
-        <div className="i2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <Image
             src={Webapp}
             alt="Webapps"
