@@ -135,7 +135,7 @@ body {
 /* Animaciones Seccion Services */
 @keyframes slide-in-left {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-10%);
     opacity: 0;
   }
   100% {
@@ -145,5 +145,39 @@ body {
 }
 
 .animate-slide-in-left {
-  animation: slide-in-left 1.5s ease-in-out forwards;
+  animation: slide-in-left 1s ease-in-out forwards;
+}
+
+@keyframes square-in-hesitate {
+  0% {
+    clip-path: inset(100% 100% 100% 100%);
+    opacity: 0;
+  }
+  40% {
+    clip-path: inset(33% 33% 33% 33%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+.square{
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-hesitate both;
+}
+
+@keyframes square-out-hesitate {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  40% {
+    clip-path: inset(33% 33% 33% 33%);
+  }
+  100% {
+    clip-path: inset(100% 100% 100% 100%);
+  }
+}
+
+.outSquareHesitate {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-out-hesitate both;
 }
