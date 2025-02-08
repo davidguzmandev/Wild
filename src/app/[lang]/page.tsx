@@ -37,7 +37,6 @@ export default async function Home({
         ]}
       />
       <Services navTranslations={t}/>
-      <WhatWeDo translations={t}/>
       <WeAre
         translations={t}
       />

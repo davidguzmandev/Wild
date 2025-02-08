@@ -1,24 +1,24 @@
 "use client";
-
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 export default function WhyUs({ translations }: { translations: any }) {
+  const isVisible = useIntersectionObserver(0.5, "whyus");
 
   return (
     <section
       id="whyus"
       aria-labelledby="whyus-heading"
-      className="">
-      <div className="flex justify-between">
-        <div className="w-24 px-8 sm:px-6 lg:px-20">
-          <p className="sm:text-7xl text-6xl font-bold uppercase text-left mb-12 text-stroke">
+      className={`h-screen py-20 transition-all duration-500 ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+      }`}>
+      <div className="max-w-full px-8 sm:px-6 lg:px-20">
+        <div className="max-w-7xl w-full px-8 sm:px-6 lg:px-8 self-start mb-20">
+          <p className="text-sm text-indigo-700 font-semibold tracking-widest uppercase before:content-[''] before:w-16 before:h-[1px] before:bg-gray-600 relative flex items-center gap-8">
             {translations.whyus}
           </p>
         </div>
-        <div>
-            <ul>
-                <li>{translations.innovation}</li>
-            </ul>
-        </div>
+
+        
       </div>
     </section>
   );

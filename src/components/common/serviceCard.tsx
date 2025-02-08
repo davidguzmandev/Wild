@@ -95,10 +95,10 @@ export default function ServiceCard({
 
   return (
     <div
-      className="flex flex-col lg:flex-row gap-8 px-4 sm:px-6 lg:px-8"
+      className="flex flex-col lg:flex-row gap-52 px-4 sm:px-6 lg:px-8"
       id="list">
       {/* Services List */}
-      <div className="w-full lg:w-1/4 space-y-6">
+      <div className="w-full lg:w-1/4 space-y-6 mx-20">
         {services.map((service) => (
           <div
             key={service.title}
@@ -106,12 +106,12 @@ export default function ServiceCard({
             className="group cursor-pointer transform transition-all duration-300 hover:translate-x-2">
             <h3
               className={`
-          text-3xl sm:text-4xl lg:text-5xl mb-2 
-          transition-all duration-300 ease-in-out
+          text-3xl sm:text-4xl lg:text-6xl p-2
+          transition-all duration-100 ease-in-out
           ${
             selected === service.title
-              ? "font-bold text-violet-600"
-              : "font-normal text-gray-600 group-hover:text-gray-900"
+              ? "font-bold text-indigo-600 pb-2"
+              : "font-semibold text-gray-400 group-hover:text-gray-900"
           }
         `}>
               <a href="#description">{service.title}</a>
@@ -126,8 +126,8 @@ export default function ServiceCard({
           (service) =>
             selected === service.title && (
               <div key={service.title} className="animate-fade-in">
-                <div className="flex flex-col lg:flex-row items-start gap-8">
-                  <div className="w-full lg:w-1/2 space-y-6">
+                <div className="flex flex-col lg:flex-row items-start">
+                  <div className="w-full space-y-6">
                     <h2 className="text-3xl text-gray-700 sm:text-4xl font-bold tracking-tight">
                       {service.h2}
                     </h2>
@@ -142,7 +142,7 @@ export default function ServiceCard({
                             <li className="flex flex-col items-center p-4 rounded-lg hover:bg-violet-50 transition-all duration-300">
                               <IconFlame
                                 stroke={1.5}
-                                className="text-violet-500 mb-2 w-6 h-6"
+                                className="text-indigo-500 mb-2 w-6 h-6"
                               />
                               <span className="text-center text-sm">
                                 {item}
@@ -156,7 +156,7 @@ export default function ServiceCard({
                     <div className="flex gap-8">
                       <Link
                         href={service.link}
-                        className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
                         <span className="mr-2">{navTranslations.viewmore}</span>
                         <IconArrowNarrowRight stroke={2} className="w-5 h-5" />
                       </Link>
@@ -170,7 +170,7 @@ export default function ServiceCard({
                     </div>
                   </div>
 
-                  {service.image && (
+                  {/* {service.image && (
                     <div className="w-full lg:w-1/2">
                       <div className="relative rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105">
                         <Image
@@ -183,7 +183,7 @@ export default function ServiceCard({
                         />
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
             )
