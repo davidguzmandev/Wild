@@ -17,12 +17,8 @@ export default function WhatWeDo({ translations }: { translations: any }) {
         </p>
       </div>
 
-      <div >
-        
-      </div>
-
       <div
-        className="flex flex-col items-center justify-center py-40 bg-indigo-500">
+        className="flex flex-col items-center justify-center py-40">
         <div
           className={`sm:text-9xl text-xl font-bold uppercase text-stroke`}>
           {translations.listweb.websites}

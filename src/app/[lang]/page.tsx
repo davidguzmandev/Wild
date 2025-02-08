@@ -5,6 +5,7 @@ import WeAre from "@/components/common/weare";
 import WhyUs from "@/components/partials/whyus";
 import WhatWeDo from "@/components/partials/whatwedo";
 import GsapInitializer from "@/components/common/gsapInitializer";
+import Services from "@/components/partials/services";
 
 
 export default async function Home({
@@ -35,7 +36,7 @@ export default async function Home({
           t.nav.craft,
         ]}
       />
-
+      <Services navTranslations={t}/>
       <WhatWeDo translations={t}/>
       <WeAre
         translations={t}
