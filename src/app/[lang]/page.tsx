@@ -6,6 +6,7 @@ import WhyUs from "@/components/partials/whyus";
 import WhatWeDo from "@/components/partials/whatwedo";
 import GsapInitializer from "@/components/common/gsapInitializer";
 import Services from "@/components/partials/services";
+import Footer from "@/components/partials/footer";
 
 
 export default async function Home({
@@ -41,6 +42,7 @@ export default async function Home({
         translations={t}
       />
       <WhyUs translations={t}/>
+      <Footer translations={t}/>
 
      
     </div>

@@ -121,7 +121,7 @@ export default function ServiceCard({
       </div>
       <div className="sm:hidden m-10" id="description"></div>
       {/* Service Content */}
-      <div className="w-full lg:w-3/4">
+      <div className="w-full lg:w-3/4 mr-14">
         {services.map(
           (service) =>
             selected === service.title && (
@@ -131,7 +131,7 @@ export default function ServiceCard({
                     <h2 className="text-3xl text-gray-700 sm:text-4xl font-bold tracking-tight">
                       {service.h2}
                     </h2>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="leading-relaxed">
                       {service.description}
                     </p>
 
