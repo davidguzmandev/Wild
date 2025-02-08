@@ -135,5 +135,5 @@ body {
 
 /* Recorte de imagenes y animacion*/
 .clip-polygon {
-  clip-path: polygon(36% 0, 82% 0, 51% 100%, 7% 100%);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
 }
