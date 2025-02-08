@@ -17,7 +17,7 @@ export default async function Home({
 
 
   return (
-    <div className="min-h-screen scroll-smooth">
+    <div className="scroll-smooth">
       <GsapInitializer />
       <Header navTranslations={t} />
       <Hero
