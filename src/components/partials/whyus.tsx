@@ -3,9 +3,17 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Uiux from "@/images/uiux.webp";
 import Backgrounduiux from "@/images/backgrounduiux.webp";
 import Image from "next/image";
+import { useHandleMouseMove } from "@/hooks/useHandleMouseMove";
+
+interface Position{
+  x: number;
+  y: number;
+}
 
 export default function WhyUs({ translations }: { translations: any }) {
   const isVisible = useIntersectionObserver(0.5, "whyus");
+  const { position, handleMouseMove, resetPosition } = useHandleMouseMove();
+
 
   return (
     <section
@@ -28,18 +36,24 @@ export default function WhyUs({ translations }: { translations: any }) {
           </div>
           <div className="my-10 flex gap-6">
             <div
-              className="w-2/6 h-[504px] p-10 bg-cover bg-center text-white"
-              style={{ backgroundImage: `url(${Backgrounduiux.src})` }}>
-              <p className="font-bold text-2xl mb-6">Diseño UI/UX</p>
-              <p>
-                Creamos interfaces graficas intuitivas para el usuario con
-                optimizaciones funcionales en cada elemento del producto.
-              </p>
-              <Image 
+              className="relative w-2/6 h-[504px] bg-cover text-white overflow-hidden rotate-z-45"
+              style={{ backgroundImage: `url(${Backgrounduiux.src})`, transform: `translate(${position.x}px, ${position.y}px)`}}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={resetPosition}
+              >
+              <div className="p-10">
+                <p className="font-bold text-2xl mb-6">Diseño UI/UX</p>
+                <p>
+                  Creamos interfaces graficas intuitivas para el usuario con
+                  optimizaciones funcionales en cada elemento del producto.
+                </p>
+              </div>
+              <Image
                 src={Uiux}
                 alt="Diseño UI/UX"
-                width={300}
-                height={300}
+                width={500}
+                height={500}
+                className="absolute bottom-0 transition-transform duration-1000 ease-in-out hover:scale-110"
               />
             </div>
             <div className="w-3/6 space-y-6">
