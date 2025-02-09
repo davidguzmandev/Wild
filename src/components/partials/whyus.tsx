@@ -3,6 +3,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Uiux from "@/images/uiux.webp";
 import Backgrounduiux from "@/images/backgrounduiux.webp";
 import Backgroundwebapp from "@/images/backgroundwebapp.webp";
+import Webapp from "@/images/webapp.webp";
 import Image from "next/image";
 import { useHandleMouseMove } from "@/hooks/useHandleMouseMove";
 
@@ -36,7 +37,7 @@ export default function WhyUs({ translations }: { translations: any }) {
           </div>
           <div className="my-10 flex gap-6 perspective-normal">
             <div
-              className={`w-2/6 h-[504px] bg-cover text-white overflow-hidden transition-transform duration-0`}
+              className="w-2/6 h-[504px] bg-cover text-white overflow-hidden transition-transform duration-0"
               style={{
                 backgroundImage: `url(${Backgrounduiux.src})`,
                 transform: `rotateX(${position.card1?.y}deg) rotateY(${position.card1?.x}deg)`,
@@ -53,27 +54,35 @@ export default function WhyUs({ translations }: { translations: any }) {
               <Image
                 src={Uiux}
                 alt="Diseño UI/UX"
-                width={500}
-                height={500}
-                className={`absolute bottom-0 transition-transform duration-3000 ease-in-out hover:scale-110 `}
+                width={407}
+                height={407}
+                className="absolute bottom-0 transition-transform duration-3000 ease-in-out hover:scale-110"
               />
             </div>
             <div className="w-3/6 space-y-6 perspective-normal">
               <div
-                className="h-60 p-10 bg-blue-600 bg-cover text-white overflow-hidden transition-transform duration-0"
+                className="h-60 bg-blue-600 bg-cover text-white overflow-hidden transition-transform duration-0"
                 style={{
                   backgroundImage: `url(${Backgroundwebapp.src})`,
                   transform: `rotateX(${position.card2?.y}deg) rotateY(${position.card2?.x}deg)`,
                 }}
                 onMouseMove={handleMouseMove("card2")}
                 onMouseLeave={() => resetPosition("card2")}>
-                <p className="font-bold text-2xl mb-6">Aplicaciones Web</p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Alias odio dolore eos esse vel repellat corporis sed quas ut,
-                  exercitationem officia quisquam sunt iste necessitatibus, a
-                  labore maiores perferendis similique!
-                </p>
+                <div className="p-10 w-3/4">
+                  <p className="font-bold text-2xl mb-6">Aplicaciones Web</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Alias odio dolore eos esse vel repellat corporis sed quas
+                    ut
+                  </p>
+                </div>
+                <Image
+                  src={Webapp}
+                  alt="Diseño UI/UX"
+                  width={612}
+                  height={240}
+                  className="absolute top-0 right-0 p-0 transition-transform duration-3000 ease-in-out hover:scale-110"
+                />
               </div>
               <div className="h-60 p-10 bg-blue-600">
                 <p>Card1</p>
