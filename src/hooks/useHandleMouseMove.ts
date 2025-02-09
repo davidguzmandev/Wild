@@ -1,28 +1,34 @@
 import { useState } from "react";
 
-
-interface Position {
-    x: number;
-    y: number;
+interface Positions {
+    [key: string]: {
+        x: number;
+        y: number;
+    };
 }
-
-/* Hook personalizado para recibir el movimiento del mouse y proporcionar animaciones a objetos
-    el return devuelve un objeto con la posición del mouse en x y y
-*/
 
 export const useHandleMouseMove = () => {
-    const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+    const [position, setPosition] = useState<Positions>({});
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleMouseMove = (elementId: string) => (e: React.MouseEvent<HTMLDivElement>) => {
         const { clientX, clientY, currentTarget } = e;
         const { left, top, width, height } = currentTarget.getBoundingClientRect();
-
+        
         const offsetX = ((clientX - left) / width - 0.5) * 2;
         const offsetY = ((clientY - top) / height - 0.5) * -2;
-        setPosition({ x: offsetX, y: offsetY });
+
+        setPosition(prev => ({
+            ...prev,
+            [elementId]: { x: offsetX, y: offsetY }
+        }));
     };
 
-    const resetPosition = () => setPosition({ x: 0, y: 0 });
+    const resetPosition = (elementId: string) => {
+        setPosition(prev => ({
+            ...prev,
+            [elementId]: { x: 0, y: 0 }
+        }));
+    };
 
-    return { position, handleMouseMove, resetPosition}
-}
+    return { position, handleMouseMove, resetPosition };
+};
