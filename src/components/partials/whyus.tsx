@@ -18,7 +18,7 @@ export default function WhyUs({ translations }: { translations: any }) {
     <section
       id="whyus"
       aria-labelledby="whyus-heading"
-      className={`h-screen py-20 transition-all duration-500 ease-out ${
+      className={`min-h-screen my-20 transition-all duration-500 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}>
       <div className="max-w-full px-8 sm:px-6 lg:px-20  mb-20">
@@ -54,7 +54,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                 alt="Diseño UI/UX"
                 width={500}
                 height={500}
-                className="absolute bottom-0 transition-transform duration-1000 ease-in-out hover:scale-110"
+                className={`absolute bottom-0 transition-transform duration-3000 ease-in-out hover:scale-125`}
               />
             </div>
             <div className="w-3/6 space-y-6">
