@@ -17,9 +17,8 @@ export const useHandleMouseMove = () => {
         const { clientX, clientY, currentTarget } = e;
         const { left, top, width, height } = currentTarget.getBoundingClientRect();
 
-        const offsetX = ((clientX - left) / width - 0.5) * 20;
-        const offsetY = ((clientY - top) / height - 0.5) * 20;
-
+        const offsetX = ((clientX - left) / width - 0.5) * 2;
+        const offsetY = ((clientY - top) / height - 0.5) * -2;
         setPosition({ x: offsetX, y: offsetY });
     };
 

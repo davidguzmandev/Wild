@@ -33,12 +33,12 @@ export default function WhyUs({ translations }: { translations: any }) {
               Somos Exelentes en
             </p>
           </div>
-          <div className="my-10 flex gap-6">
+          <div className="my-10 flex gap-6 perspective-normal">
             <div
-              className="relative w-2/6 h-[504px] bg-cover text-white overflow-hidden"
+              className={`relative w-2/6 h-[504px] bg-cover text-white overflow-hidden transition-transform duration-50`}
               style={{
                 backgroundImage: `url(${Backgrounduiux.src})`,
-                transform: `translate(${position.x}px, ${position.y}px)`,
+                transform: `rotateX(${position.y}deg) rotateY(${position.x}deg)`,
               }}
               onMouseMove={handleMouseMove}
               onMouseLeave={resetPosition}>
@@ -54,7 +54,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                 alt="Diseño UI/UX"
                 width={500}
                 height={500}
-                className="absolute bottom-0 transition-transform duration-1000 ease-in-out hover:scale-110 "
+                className="absolute bottom-0 transition-transform duration-1000 ease-in-out hover:scale-110"
               />
             </div>
             <div className="w-3/6 space-y-6">
