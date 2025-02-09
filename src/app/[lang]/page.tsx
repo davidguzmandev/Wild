@@ -3,7 +3,6 @@ import Hero from "@/components/partials/hero";
 import { getDictionary } from "../i18n/dictionary";
 import WeAre from "@/components/common/weare";
 import WhyUs from "@/components/partials/whyus";
-import WhatWeDo from "@/components/partials/whatwedo";
 import GsapInitializer from "@/components/common/gsapInitializer";
 import Services from "@/components/partials/services";
 import Footer from "@/components/partials/footer";
