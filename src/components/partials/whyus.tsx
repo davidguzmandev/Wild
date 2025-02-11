@@ -11,7 +11,7 @@ interface Position {
   x: number;
   y: number;
 }
-
+// VOY AQUI: EL PROBLEMA AHORA ES QUE LA IMAGEN SE DESBORDA CUANDO CARGA LA WEB. HAY UNA POSIBLE SOLCUOIN EN GEMINI, REVISALA.
 export default function WhyUs({ translations }: { translations: any }) {
   const isVisible = useIntersectionObserver(0.5, "whyus");
   const { position, handleMouseMove, resetPosition } = useHandleMouseMove();
@@ -20,7 +20,7 @@ export default function WhyUs({ translations }: { translations: any }) {
     <section
       id="whyus"
       aria-labelledby="whyus-heading"
-      className={`min-h-screen my-20 transition-all duration-500 ease-out ${
+      className={`min-h-screen my-20 transition-all  ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}>
       <div className="max-w-full px-8 sm:px-6 lg:px-20  mb-20">
@@ -35,12 +35,14 @@ export default function WhyUs({ translations }: { translations: any }) {
               Somos Exelentes en
             </p>
           </div>
+
           <div className="my-10 flex gap-6 perspective-normal">
             <div
-              className="w-2/6 h-[504px] bg-cover text-white overflow-hidden transition-transform duration-0"
+              className="w-2/6 h-[504px] bg-cover text-white overflow-hidden"
               style={{
                 backgroundImage: `url(${Backgrounduiux.src})`,
                 transform: `rotateX(${position.card1?.y}deg) rotateY(${position.card1?.x}deg)`,
+                transition: 'transform 0.3s ease-out'
               }}
               onMouseMove={handleMouseMove("card1")}
               onMouseLeave={() => resetPosition("card1")}>
@@ -56,34 +58,43 @@ export default function WhyUs({ translations }: { translations: any }) {
                 alt="Diseño UI/UX"
                 width={407}
                 height={407}
-                className="absolute bottom-0 transition-transform duration-3000 ease-in-out hover:scale-110"
+                style={{
+                  transform: `translateX(${position.card1?.x * 6}px) translateY(${position.card1?.y * 6}px)`,
+                  transition: 'transform 0.3s ease-out'
+                }}
+                className="absolute -bottom-2"
               />
             </div>
+
             <div className="w-3/6 space-y-6 perspective-normal">
               <div
-                className="h-60 bg-blue-600 bg-cover text-white overflow-hidden transition-transform duration-0"
+                className="h-60 bg-blue-600 bg-cover text-white overflow-hidden"
                 style={{
                   backgroundImage: `url(${Backgroundwebapp.src})`,
                   transform: `rotateX(${position.card2?.y}deg) rotateY(${position.card2?.x}deg)`,
+                  transition: 'transform 0.3s ease-out'
                 }}
                 onMouseMove={handleMouseMove("card2")}
                 onMouseLeave={() => resetPosition("card2")}>
                 <div className="p-10 w-3/4">
                   <p className="font-bold text-2xl mb-6">Aplicaciones Web</p>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Alias odio dolore eos esse vel repellat corporis sed quas
-                    ut
+                    Creamos soluciones rápidas, eficientes, seguras y compatibles con múltiples plataformas, desde la conceptualización hasta la implementación.
                   </p>
                 </div>
                 <Image
                   src={Webapp}
-                  alt="Diseño UI/UX"
-                  width={612}
-                  height={240}
-                  className="absolute top-0 right-0 p-0 transition-transform duration-3000 ease-in-out hover:scale-110"
+                  alt="Webapp"
+                  width={520}
+                  height={520}
+                  style={{
+                    transform: `translateX(${position.card2?.x * 4}px) translateY(${position.card2?.y * 2}px)`,
+                    transition: 'transform 0.3s ease-out'
+                  }}
+                  className="absolute -top-12 -right-40"
                 />
               </div>
+
               <div className="h-60 p-10 bg-blue-600">
                 <p>Card1</p>
                 <p>
