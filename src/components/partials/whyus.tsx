@@ -42,27 +42,28 @@ export default function WhyUs({ translations }: { translations: any }) {
               style={{
                 backgroundImage: `url(${Backgrounduiux.src})`,
                 transform: `rotateX(${position.card1?.y}deg) rotateY(${position.card1?.x}deg)`,
-                transition: 'transform 0.3s ease-out'
+                transition: "transform 0.3s ease-out",
               }}
               onMouseMove={handleMouseMove("card1")}
               onMouseLeave={() => resetPosition("card1")}>
               <div className="p-10">
-                <p className="font-bold text-2xl mb-6">Diseño UI/UX</p>
+                <p className="font-bold text-2xl mb-6">Aplicaciones Web</p>
                 <p>
-                  Creamos interfaces graficas intuitivas para el usuario con
-                  optimizaciones funcionales en cada elemento del producto.
+                  Creamos soluciones rápidas, eficientes, seguras y compatibles
+                  con múltiples plataformas, desde la conceptualización hasta la
+                  implementación.
                 </p>
               </div>
               <Image
-                src={Uiux}
-                alt="Diseño UI/UX"
-                width={407}
-                height={407}
+                src={Webapp}
+                alt="Webapp"
+                width={700}
+                height={700}
                 style={{
                   transform: `translateX(${position.card1?.x * 6}px) translateY(${position.card1?.y * 6}px)`,
-                  transition: 'transform 0.3s ease-out'
+                  transition: "transform 0.3s ease-out",
                 }}
-                className="absolute -bottom-2"
+                className="absolute -bottom-60"
               />
             </div>
 
@@ -72,46 +73,86 @@ export default function WhyUs({ translations }: { translations: any }) {
                 style={{
                   backgroundImage: `url(${Backgroundwebapp.src})`,
                   transform: `rotateX(${position.card2?.y}deg) rotateY(${position.card2?.x}deg)`,
-                  transition: 'transform 0.3s ease-out'
+                  transition: "transform 0.3s ease-out",
                 }}
                 onMouseMove={handleMouseMove("card2")}
                 onMouseLeave={() => resetPosition("card2")}>
                 <div className="p-10 w-3/4">
-                  <p className="font-bold text-2xl mb-6">Aplicaciones Web</p>
+                  <p className="font-bold text-2xl mb-6">Diseño UI/UX</p>
                   <p>
-                    Creamos soluciones rápidas, eficientes, seguras y compatibles con múltiples plataformas, desde la conceptualización hasta la implementación.
+                    Creamos interfaces graficas intuitivas para el usuario con
+                    optimizaciones funcionales en cada elemento del producto.
                   </p>
                 </div>
                 <Image
-                  src={Webapp}
-                  alt="Webapp"
-                  width={520}
-                  height={520}
+                  src={Uiux}
+                  alt="Diseño UI/UX"
+                  width={407}
+                  height={407}
                   style={{
                     transform: `translateX(${position.card2?.x * 4}px) translateY(${position.card2?.y * 2}px)`,
-                    transition: 'transform 0.3s ease-out'
+                    transition: "transform 0.3s ease-out",
                   }}
-                  className="absolute -top-12 -right-40"
+                  className="absolute -bottom-20 -right-20"
                 />
               </div>
 
-              <div className="h-60 p-10 bg-blue-600">
-                <p>Card1</p>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Alias odio dolore eos esse vel repellat corporis sed quas ut,
-                  exercitationem officia quisquam sunt iste necessitatibus, a
-                  labore maiores perferendis similique!
-                </p>
+              <div
+                className="h-60 bg-blue-600 bg-cover text-white overflow-hidden"
+                style={{
+                  backgroundImage: `url(${Backgroundwebapp.src})`,
+                  transform: `rotateX(${position.card4?.y}deg) rotateY(${position.card4?.x}deg)`,
+                  transition: "transform 0.3s ease-out",
+                }}
+                onMouseMove={handleMouseMove("card4")}
+                onMouseLeave={() => resetPosition("card4")}>
+                <div className="p-10 w-3/4">
+                  <p className="font-bold text-2xl mb-6">Website Development</p>
+                  <p>
+                    El estudio de cada proyecto nos hace desarrollar en el lenguaje o framework mas adecuado para tu idea. Nosotros SI hacemos software a la medida.
+                  </p>
+                </div>
+                <Image
+                  src={Uiux}
+                  alt="CMS"
+                  width={407}
+                  height={407}
+                  style={{
+                    transform: `translateX(${position.card4?.x * 4}px) translateY(${position.card4?.y * 2}px)`,
+                    transition: "transform 0.3s ease-out",
+                  }}
+                  className="absolute -bottom-20 -right-20"
+                />
               </div>
             </div>
-            <div className="w-1/6 h-[504] p-10 bg-blue-600">
-              <p>Card1</p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias
-                odio dolore eos esse vel repellat corporis sed quas ut,
-                exercitationem officia quisquam!
-              </p>
+            <div
+              className="w-1/6 h-[504] p-10 text-white overflow-hidden"
+              style={{
+                backgroundImage: `url(${Backgroundwebapp.src})`,
+                transform: `rotateX(${position.card3?.y}deg) rotateY(${position.card3?.x}deg)`,
+                transition: "transform 0.3s ease-out",
+              }}
+              onMouseMove={handleMouseMove("card3")}
+              onMouseLeave={() => resetPosition("card3")}>
+              <div className="p-10 w-3/4">
+                <p className="font-bold text-2xl mb-6">website management</p>
+                <p>
+                  Desarrollamos y administrar Sistemas de Gestion de Contenido
+                  como Wordpress, Joomla, Drupal e incluso Moodle como
+                  plataforma educativa.
+                </p>
+              </div>
+              <Image
+                src={Uiux}
+                alt="CMS"
+                width={407}
+                height={407}
+                style={{
+                  transform: `translateX(${position.card3?.x * 4}px) translateY(${position.card3?.y * 2}px)`,
+                  transition: "transform 0.3s ease-out",
+                }}
+                className="absolute -bottom-20 -right-20"
+              />
             </div>
           </div>
         </div>
