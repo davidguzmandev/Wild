@@ -80,7 +80,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                 onMouseLeave={() => resetPosition("card2")}>
                 <div className="p-10 w-3/4">
                   <p className="font-bold text-2xl mb-6">Diseño UI/UX</p>
-                  <p>
+                  <p className="text-pretty">
                     Creamos interfaces graficas intuitivas para el usuario con
                     optimizaciones funcionales en cada elemento del producto.
                   </p>
@@ -109,13 +109,13 @@ export default function WhyUs({ translations }: { translations: any }) {
                 onMouseLeave={() => resetPosition("card3")}>
                 <div className="p-10 w-3/4">
                   <p className="font-bold text-2xl mb-6">Website Development</p>
-                  <p>
+                  <p className="text-pretty">
                     El estudio de cada proyecto nos hace desarrollar en el lenguaje o framework mas adecuado para tu idea. Nosotros SI hacemos software a la medida.
                   </p>
                 </div>
                 <Image
                   src={Websitedev}
-                  alt="CMS"
+                  alt="websitedev"
                   width={220}
                   height={220}
                   style={{
@@ -127,7 +127,7 @@ export default function WhyUs({ translations }: { translations: any }) {
               </div>
             </div>
             <div
-              className="w-1/6 h-[504] p-10 text-white overflow-hidden"
+              className="w-1/6 h-[504] bg-blue-600 bg-cover text-white overflow-hidden"
               style={{
                 backgroundImage: `url(${Backgroundwebapp.src})`,
                 transform: `rotateX(${position.card3?.y}deg) rotateY(${position.card3?.x}deg)`,
@@ -135,12 +135,10 @@ export default function WhyUs({ translations }: { translations: any }) {
               }}
               onMouseMove={handleMouseMove("card3")}
               onMouseLeave={() => resetPosition("card3")}>
-              <div className="p-10 w-3/4">
-                <p className="font-bold text-2xl mb-6">website management</p>
-                <p>
-                  Desarrollamos y administrar Sistemas de Gestion de Contenido
-                  como Wordpress, Joomla, Drupal e incluso Moodle como
-                  plataforma educativa.
+              <div className="p-10 ">
+                <p className="font-bold text-2xl mb-6">CMS</p>
+                <p className="text-wrap">
+                  Wordpress es uno de los mejores, ¿porque no?, trabajamos tambien con Joomla, Drupal, Shopify o incluso Moodle para instituciones educativas.
                 </p>
               </div>
               <Image
