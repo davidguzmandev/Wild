@@ -4,6 +4,7 @@ import Uiux from "@/images/uiux.webp";
 import Backgrounduiux from "@/images/backgrounduiux.webp";
 import Backgroundwebapp from "@/images/backgroundwebapp.webp";
 import Webapp from "@/images/webapp.webp";
+import Websitedev from "@/images/websitedev.webp";
 import Image from "next/image";
 import { useHandleMouseMove } from "@/hooks/useHandleMouseMove";
 
@@ -101,11 +102,11 @@ export default function WhyUs({ translations }: { translations: any }) {
                 className="h-60 bg-blue-600 bg-cover text-white overflow-hidden"
                 style={{
                   backgroundImage: `url(${Backgroundwebapp.src})`,
-                  transform: `rotateX(${position.card4?.y}deg) rotateY(${position.card4?.x}deg)`,
+                  transform: `rotateX(${position.card3?.y}deg) rotateY(${position.card3?.x}deg)`,
                   transition: "transform 0.3s ease-out",
                 }}
-                onMouseMove={handleMouseMove("card4")}
-                onMouseLeave={() => resetPosition("card4")}>
+                onMouseMove={handleMouseMove("card3")}
+                onMouseLeave={() => resetPosition("card3")}>
                 <div className="p-10 w-3/4">
                   <p className="font-bold text-2xl mb-6">Website Development</p>
                   <p>
@@ -113,15 +114,15 @@ export default function WhyUs({ translations }: { translations: any }) {
                   </p>
                 </div>
                 <Image
-                  src={Uiux}
+                  src={Websitedev}
                   alt="CMS"
-                  width={407}
-                  height={407}
+                  width={220}
+                  height={220}
                   style={{
-                    transform: `translateX(${position.card4?.x * 4}px) translateY(${position.card4?.y * 2}px)`,
+                    transform: `translateX(${position.card3?.x * 4}px) translateY(${position.card3?.y * 2}px)`,
                     transition: "transform 0.3s ease-out",
                   }}
-                  className="absolute -bottom-20 -right-20"
+                  className="absolute -bottom-25 -right-10"
                 />
               </div>
             </div>
