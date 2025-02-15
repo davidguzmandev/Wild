@@ -33,16 +33,16 @@ export default function WhyUs({ translations }: { translations: any }) {
             {translations.whyus}
           </p>
         </div>
-        <div className="mx-32">
+        <div className="xl:mx-12 2xl:mx-32">
           <div className="w-1/3">
             <p className="text-6xl font-bold uppercase text-stroke">
               Somos Exelentes en
             </p>
           </div>
 
-          <div className="my-10 flex gap-6 perspective-normal">
+          <div className="my-10 flex max-lg:flex-wrap gap-6 perspective-normal justify-center">
             <div
-              className="w-2/6 h-[504px] bg-cover text-white overflow-hidden"
+              className="w-2/7 max-lg:w-1/4 h-[504px] bg-cover text-white overflow-hidden"
               style={{
                 backgroundImage: `url(${Backgrounduiux.src})`,
                 transform: `rotateX(${position.card1?.y}deg) rotateY(${position.card1?.x}deg)`,
@@ -52,7 +52,7 @@ export default function WhyUs({ translations }: { translations: any }) {
               onMouseLeave={() => resetPosition("card1")}>
               <div className="p-10">
                 <p className="font-bold text-2xl mb-6">Aplicaciones Web</p>
-                <p>
+                <p className="text-sm xl:text-base">
                   Creamos soluciones rápidas, eficientes, seguras y compatibles
                   con múltiples plataformas, desde la conceptualización hasta la
                   implementación.
@@ -67,11 +67,11 @@ export default function WhyUs({ translations }: { translations: any }) {
                   transform: `translateX(${position.card1?.x * 6}px) translateY(${position.card1?.y * 6}px)`,
                   transition: "transform 0.3s ease-out",
                 }}
-                className="absolute -bottom-50 xl:-bottom-60 2xl:-bottom-80 3xl:-bottom-100 4xl:-bottom-120"
+                className="absolute -bottom-50 xl:-bottom-60 2xl:-bottom-80 3xl:-bottom-105 4xl:-bottom-120"
               />
             </div>
 
-            <div className="w-3/6 space-y-6 perspective-normal">
+            <div className="w-3/6 max-lg:w-4/6 space-y-6 perspective-normal">
               <div
                 className="h-60 bg-blue-600 bg-cover text-white overflow-hidden"
                 style={{
@@ -83,7 +83,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                 onMouseLeave={() => resetPosition("card2")}>
                 <div className="p-10 w-3/4">
                   <p className="font-bold text-2xl mb-6">Diseño UI/UX</p>
-                  <p className="text-pretty xl:pr-20">
+                  <p className="text-pretty lg:pr-20 text-sm xl:text-base">
                     Creamos interfaces graficas intuitivas para el usuario con
                     optimizaciones funcionales en cada elemento del producto.
                   </p>
@@ -97,7 +97,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                     transform: `translateX(${position.card2?.x * 4}px) translateY(${position.card2?.y * 2}px)`,
                     transition: "transform 0.3s ease-out",
                   }}
-                  className="absolute -bottom-20 -right-20"
+                  className="absolute -bottom-20 -right-30"
                 />
               </div>
 
@@ -112,7 +112,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                 onMouseLeave={() => resetPosition("card3")}>
                 <div className="p-10 w-3/4">
                   <p className="font-bold text-2xl mb-6">Website Development</p>
-                  <p className="text-pretty">
+                  <p className="text-pretty text-sm xl:text-base">
                     El estudio de cada proyecto nos hace desarrollar en el lenguaje o framework mas adecuado para tu idea. Nosotros SI hacemos software a la medida.
                   </p>
                 </div>
@@ -129,8 +129,9 @@ export default function WhyUs({ translations }: { translations: any }) {
                 />
               </div>
             </div>
+
             <div
-              className="w-1/6 h-[504] bg-blue-600 bg-cover text-white overflow-hidden"
+              className="max-lg:w-full max-lg:mx-7 w-1/6 max-lg:h-[180] h-[504] bg-blue-600 bg-cover text-white overflow-hidden"
               style={{
                 backgroundImage: `url(${Backgroundcms.src})`,
                 transform: `rotateX(${position.card4?.y}deg) rotateY(${position.card4?.x}deg)`,
@@ -140,8 +141,8 @@ export default function WhyUs({ translations }: { translations: any }) {
               onMouseLeave={() => resetPosition("card4")}>
               <div className="p-10 ">
                 <p className="font-bold text-2xl mb-6">CMS</p>
-                <p className="text-wrap">
-                  Wordpress es uno de los mejores, ¿pero porque no?, trabajamos tambien con Joomla, Drupal, Shopify o incluso Moodle para instituciones educativas.
+                <p className="text-wrap text-sm xl:text-base max-lg:pr-30">
+                  Trabajamos con sistemas de gestion de contenido como Wordpress, Joomla, Shopify o incluso Moodle para instituciones educativas.
                 </p>
               </div>
               <Image
@@ -153,7 +154,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                   transform: `translateX(${position.card4?.x * 4}px) translateY(${position.card4?.y * 2}px)`,
                   transition: "transform 0.3s ease-out",
                 }}
-                className="absolute -bottom-10 -right-10"
+                className="absolute -bottom-10 max-lg:w-52 xl:-bottom-20 2xl:-bottom-15 -right-10"
               />
             </div>
           </div>
