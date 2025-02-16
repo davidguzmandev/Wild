@@ -24,7 +24,7 @@ export default function Hero({
       <div className="md:absolute inset-0 bg-cover bg-center flex justify-center z-0 md:order-2 order-3">
         <HeroBanner />
       </div>
-      <div className="justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1 max-sm:mt-20">
+      <div className="justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1 max-sm:mt-24">
         <div className="sm:mt-20 animate-fade-in-down">
           <h1 className="text-lg font-bold text-gray-900 mb-6 text-left leading-tight uppercase">
             {navTranslations.we}
@@ -35,7 +35,7 @@ export default function Hero({
             </span>
           </h1>
           <div className="flex">
-            <h2 className="text-left font-semibold text-6xl w-1/2">
+            <h2 className="text-left font-semibold text-6xl sm:w-1/2">
               {navTranslations.heroText2.split(" ").map((word, index) => {
                 // Palabras a resaltar
                 const wordsToHighlight = ["sitios", "web", "websites"];

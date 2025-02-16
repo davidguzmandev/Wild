@@ -40,9 +40,9 @@ export default function WhyUs({ translations }: { translations: any }) {
             </p>
           </div>
 
-          <div className="my-10 flex max-lg:flex-wrap gap-6 perspective-normal justify-center">
+          <div className="my-10 flex max-lg:flex-wrap max-sm:flex-col gap-6 perspective-normal justify-center">
             <div
-              className="w-2/7 max-lg:w-1/4 h-[504px] bg-cover text-white overflow-hidden"
+              className="w-full sm:w-1/4 md:w-1/4 xl:w-2/7 max-sm:h-96 h-[504px] bg-cover text-white overflow-hidden"
               style={{
                 backgroundImage: `url(${Backgrounduiux.src})`,
                 transform: `rotateX(${position.card1?.y}deg) rotateY(${position.card1?.x}deg)`,
@@ -67,13 +67,13 @@ export default function WhyUs({ translations }: { translations: any }) {
                   transform: `translateX(${position.card1?.x * 6}px) translateY(${position.card1?.y * 6}px)`,
                   transition: "transform 0.3s ease-out",
                 }}
-                className="absolute -bottom-50 xl:-bottom-60 2xl:-bottom-80 3xl:-bottom-105 4xl:-bottom-120"
+                className="absolute -bottom-90 sm:-bottom-30 xl:-bottom-60 2xl:-bottom-80 3xl:-bottom-105 4xl:-bottom-120"
               />
             </div>
 
-            <div className="w-3/6 max-lg:w-4/6 space-y-6 perspective-normal">
+            <div className="w-full sm:w-4/6 md:w-4/6 space-y-6 perspective-normal">
               <div
-                className="h-60 bg-blue-600 bg-cover text-white overflow-hidden"
+                className="h-66 sm:h-60 bg-blue-600 bg-cover text-white overflow-hidden"
                 style={{
                   backgroundImage: `url(${Backgroundwebapp.src})`,
                   transform: `rotateX(${position.card2?.y}deg) rotateY(${position.card2?.x}deg)`,
@@ -97,12 +97,12 @@ export default function WhyUs({ translations }: { translations: any }) {
                     transform: `translateX(${position.card2?.x * 4}px) translateY(${position.card2?.y * 2}px)`,
                     transition: "transform 0.3s ease-out",
                   }}
-                  className="absolute -bottom-20 -right-30"
+                  className="absolute -bottom-20 -right-40 sm:-right-30"
                 />
               </div>
 
               <div
-                className="h-60 bg-blue-600 bg-cover text-white overflow-hidden"
+                className="h-86 sm:h-60 bg-blue-600 bg-cover text-white overflow-hidden"
                 style={{
                   backgroundImage: `url(${Backgroundwebsite.src})`,
                   transform: `rotateX(${position.card3?.y}deg) rotateY(${position.card3?.x}deg)`,
@@ -113,7 +113,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                 <div className="p-10 w-3/4">
                   <p className="font-bold text-2xl mb-6">Website Development</p>
                   <p className="text-pretty text-sm xl:text-base">
-                    El estudio de cada proyecto nos hace desarrollar en el lenguaje o framework mas adecuado para tu idea. Nosotros SI hacemos software a la medida.
+                    Cada página web es diferente, por lo que nos aseguramos de que cada sitio que desarrollamos sea único y se adapte a las necesidades específicas de nuestros clientes.
                   </p>
                 </div>
                 <Image
@@ -125,13 +125,13 @@ export default function WhyUs({ translations }: { translations: any }) {
                     transform: `translateX(${position.card3?.x * 4}px) translateY(${position.card3?.y * 2}px)`,
                     transition: "transform 0.3s ease-out",
                   }}
-                  className="absolute -bottom-25 -right-10"
+                  className="absolute -bottom-25 -right-20 sm:-right-10"
                 />
               </div>
             </div>
 
             <div
-              className="max-lg:w-full max-lg:mx-7 w-1/6 max-lg:h-[180] h-[504] bg-blue-600 bg-cover text-white overflow-hidden"
+              className="sm:w-18/19 lg:w-2/7 sm:h-50 h-74 lg:h-[504] bg-blue-600 bg-cover text-white overflow-hidden"
               style={{
                 backgroundImage: `url(${Backgroundcms.src})`,
                 transform: `rotateX(${position.card4?.y}deg) rotateY(${position.card4?.x}deg)`,
@@ -139,9 +139,9 @@ export default function WhyUs({ translations }: { translations: any }) {
               }}
               onMouseMove={handleMouseMove("card4")}
               onMouseLeave={() => resetPosition("card4")}>
-              <div className="p-10 ">
+              <div className="p-10">
                 <p className="font-bold text-2xl mb-6">CMS</p>
-                <p className="text-wrap text-sm xl:text-base max-lg:pr-30">
+                <p className="text-wrap text-sm xl:text-base pr-10 ">
                   Trabajamos con sistemas de gestion de contenido como Wordpress, Joomla, Shopify o incluso Moodle para instituciones educativas.
                 </p>
               </div>
