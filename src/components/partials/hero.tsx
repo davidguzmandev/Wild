@@ -24,7 +24,7 @@ export default function Hero({
       <div className="md:absolute inset-0 bg-cover bg-center flex justify-center z-0 md:order-2 order-3">
         <HeroBanner />
       </div>
-      <div className="justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1 ">
+      <div className="justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1 max-sm:mt-20">
         <div className="sm:mt-20 animate-fade-in-down">
           <h1 className="text-lg font-bold text-gray-900 mb-6 text-left leading-tight uppercase">
             {navTranslations.we}
@@ -54,11 +54,11 @@ export default function Hero({
               })}
             </h2>
           </div>
-          <div className="flex max-sm:flex-col  gap-6 mt-10 ">
+          <div className="flex mt-10 ">
             <button
-              className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6  group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-wide"
+              className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-wide "
               aria-label={navTranslations.talktous}>
-              <span className="inline-flex items-center gap-5 group-hover:text-white">
+              <span className="inline-flex items-center gap-10 group-hover:text-white ">
                 {navTranslations.talktous}{" "}
                 <IconMug stroke={2} className="group-hover:hidden group-hover:text-white" />{" "}
                 <IconCoffee stroke={2} className="hidden group-hover:block group-hover:text-violet-500" />
