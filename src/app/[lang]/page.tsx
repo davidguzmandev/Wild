@@ -3,10 +3,8 @@ import Hero from "@/components/partials/hero";
 import { getDictionary } from "../i18n/dictionary";
 import WeAre from "@/components/common/weare";
 import WhyUs from "@/components/partials/whyus";
-import GsapInitializer from "@/components/common/gsapInitializer";
 import Services from "@/components/partials/services";
 import Footer from "@/components/partials/footer";
-
 
 export default async function Home({
   params,
@@ -16,10 +14,8 @@ export default async function Home({
   const lang = (await params).lang;
   const t = await (await getDictionary(lang)).home;
 
-
   return (
     <div className="scroll-smooth">
-      <GsapInitializer />
       <Header navTranslations={t} />
       <Hero
         navTranslations={t}
@@ -42,8 +38,6 @@ export default async function Home({
       />
       <WhyUs translations={t}/>
       <Footer translations={t}/>
-
-     
     </div>
   );
 }

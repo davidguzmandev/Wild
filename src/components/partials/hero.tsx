@@ -1,10 +1,8 @@
 "use client";
 import useRandomText from "@/hooks/useRandomText";
-import {
-  IconCoffee,
-  IconMug,
-} from "@tabler/icons-react";
-import HeroBanner from "@/components/common/herobanner";
+import { IconCoffee, IconMug } from "@tabler/icons-react";
+import Image from "next/image";
+import Background from "@/images/background.webp";
 
 interface RandomTextComponentProps {
   words: string[];
@@ -21,8 +19,13 @@ export default function Hero({
 
   return (
     <section className="min-h-screen px-2 relative flex flex-col justify-center">
-      <div className="md:absolute inset-0 bg-cover bg-center flex justify-center z-0 md:order-2 order-3">
-        <HeroBanner />
+      <div className="fixed z-0 inset-0">
+        <Image
+          src={Background}
+          alt="background"
+          fill
+          className="object-cover object-center w-full h-full"
+        />
       </div>
       <div className="justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1 max-sm:mt-24">
         <div className="sm:mt-20 animate-fade-in-down">
@@ -60,8 +63,14 @@ export default function Hero({
               aria-label={navTranslations.talktous}>
               <span className="inline-flex items-center gap-10 group-hover:text-white ">
                 {navTranslations.talktous}{" "}
-                <IconMug stroke={2} className="group-hover:hidden group-hover:text-white" />{" "}
-                <IconCoffee stroke={2} className="hidden group-hover:block group-hover:text-violet-500" />
+                <IconMug
+                  stroke={2}
+                  className="group-hover:hidden group-hover:text-white"
+                />{" "}
+                <IconCoffee
+                  stroke={2}
+                  className="hidden group-hover:block group-hover:text-violet-500"
+                />
               </span>
             </button>
           </div>
