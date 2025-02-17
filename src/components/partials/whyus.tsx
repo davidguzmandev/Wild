@@ -67,13 +67,13 @@ export default function WhyUs({ translations }: { translations: any }) {
                   transform: `translateX(${position.card1?.x * 6}px) translateY(${position.card1?.y * 6}px)`,
                   transition: "transform 0.3s ease-out",
                 }}
-                className="absolute -bottom-90 sm:-bottom-30 xl:-bottom-60 2xl:-bottom-80 3xl:-bottom-105 4xl:-bottom-120"
+                className="absolute -bottom-70 xs:-bottom-130 sm:-bottom-30 xl:-bottom-60 2xl:-bottom-80 3xl:-bottom-105 4xl:-bottom-120"
               />
             </div>
 
             <div className="w-full sm:w-4/6 md:w-4/6 space-y-6 perspective-normal">
               <div
-                className="h-66 sm:h-60 bg-blue-600 bg-cover text-white overflow-hidden"
+                className="h-80 sm:h-60 bg-blue-600 bg-cover text-white overflow-hidden"
                 style={{
                   backgroundImage: `url(${Backgroundwebapp.src})`,
                   transform: `rotateX(${position.card2?.y}deg) rotateY(${position.card2?.x}deg)`,
@@ -83,7 +83,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                 onMouseLeave={() => resetPosition("card2")}>
                 <div className="p-10 w-3/4">
                   <p className="font-bold text-2xl mb-6">Diseño UI/UX</p>
-                  <p className="text-pretty lg:pr-20 text-sm xl:text-base">
+                  <p className="text-pretty lg:pr-20 text-sm xl:text-base mb-10">
                     Creamos interfaces graficas intuitivas para el usuario con
                     optimizaciones funcionales en cada elemento del producto.
                   </p>
@@ -102,7 +102,7 @@ export default function WhyUs({ translations }: { translations: any }) {
               </div>
 
               <div
-                className="h-86 sm:h-60 bg-blue-600 bg-cover text-white overflow-hidden"
+                className="h-88 sm:h-60 bg-blue-600 bg-cover text-white overflow-hidden"
                 style={{
                   backgroundImage: `url(${Backgroundwebsite.src})`,
                   transform: `rotateX(${position.card3?.y}deg) rotateY(${position.card3?.x}deg)`,
