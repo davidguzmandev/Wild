@@ -19,7 +19,7 @@ export default function Hero({
 
   return (
     <section className="min-h-screen px-2 relative flex flex-col justify-center">
-      <div className="fixed z-0 inset-0">
+      <div className="absolute z-0 inset-0">
         <Image
           src={Background}
           alt="background"
