@@ -4,11 +4,11 @@ import Image from "next/image";
 import Logo from "@/images/logo.webp";
 
 export default function Footer({ translations }: { translations: any }) {
-  const isVisible = useIntersectionObserver(0.5, "whyus");
+  const isVisible = useIntersectionObserver(0.5, "footer");
 
   return (
     <section
-      id="whyus"
+      id="footer"
       aria-labelledby="whyus-heading"
       className={`min-h-screen py-20 transition-all duration-500 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"

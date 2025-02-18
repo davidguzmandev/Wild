@@ -4,7 +4,7 @@ import { IconHandFinger, IconHandClick  } from "@tabler/icons-react";
 
 
 export default function Letstalk({ translations }: { translations: any }) {
-  const isVisible = useIntersectionObserver(0.5, "whyus");
+  const isVisible = useIntersectionObserver(0.5, "letstalk");
 
   return (
     <section
