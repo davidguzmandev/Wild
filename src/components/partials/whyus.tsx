@@ -15,7 +15,7 @@ interface Position {
   x: number;
   y: number;
 }
-// VOY AQUI: EL PROBLEMA AHORA ES QUE LA IMAGEN SE DESBORDA CUANDO CARGA LA WEB. HAY UNA POSIBLE SOLCUOIN EN GEMINI, REVISALA.
+
 export default function WhyUs({ translations }: { translations: any }) {
   const isVisible = useIntersectionObserver(0.5, "whyus");
   const { position, handleMouseMove, resetPosition } = useHandleMouseMove();
@@ -35,8 +35,8 @@ export default function WhyUs({ translations }: { translations: any }) {
         </div>
         <div className="xl:mx-12 2xl:mx-32">
           <div className="w-1/3">
-            <p className="text-6xl font-bold uppercase text-stroke">
-              Somos Exelentes en
+            <p className="max-sm:text-5xl text-6xl font-bold uppercase text-stroke">
+              {translations.weareexcellentat}
             </p>
           </div>
 
@@ -51,11 +51,11 @@ export default function WhyUs({ translations }: { translations: any }) {
               onMouseMove={handleMouseMove("card1")}
               onMouseLeave={() => resetPosition("card1")}>
               <div className="p-10">
-                <p className="font-bold text-2xl mb-6">Aplicaciones Web</p>
+                <p className="font-bold text-2xl mb-6">
+                  {translations.listdevelop.webapp}
+                </p>
                 <p className="text-sm xl:text-base">
-                  Creamos soluciones rápidas, eficientes, seguras y compatibles
-                  con múltiples plataformas, desde la conceptualización hasta la
-                  implementación.
+                  {translations.whyuslist.webappdescription}
                 </p>
               </div>
               <Image
@@ -82,10 +82,11 @@ export default function WhyUs({ translations }: { translations: any }) {
                 onMouseMove={handleMouseMove("card2")}
                 onMouseLeave={() => resetPosition("card2")}>
                 <div className="p-10 w-3/4">
-                  <p className="font-bold text-2xl mb-6">Diseño UI/UX</p>
+                  <p className="font-bold text-2xl mb-6">
+                    {translations.whyuslist.designuiux}
+                  </p>
                   <p className="text-pretty lg:pr-20 text-sm xl:text-base mb-10">
-                    Creamos interfaces graficas intuitivas para el usuario con
-                    optimizaciones funcionales en cada elemento del producto.
+                    {translations.whyuslist.designuiuxdescription}
                   </p>
                 </div>
                 <Image
@@ -111,9 +112,11 @@ export default function WhyUs({ translations }: { translations: any }) {
                 onMouseMove={handleMouseMove("card3")}
                 onMouseLeave={() => resetPosition("card3")}>
                 <div className="p-10 w-3/4">
-                  <p className="font-bold text-2xl mb-6">Website Development</p>
+                  <p className="font-bold text-2xl mb-6">
+                    {translations.webdevelop}
+                  </p>
                   <p className="text-pretty text-sm xl:text-base">
-                    Cada página web es diferente, por lo que nos aseguramos de que cada sitio que desarrollamos sea único y se adapte a las necesidades específicas de nuestros clientes.
+                    {translations.whyuslist.webdevelopdescription}
                   </p>
                 </div>
                 <Image
@@ -142,7 +145,7 @@ export default function WhyUs({ translations }: { translations: any }) {
               <div className="p-10">
                 <p className="font-bold text-2xl mb-6">CMS</p>
                 <p className="text-wrap text-sm xl:text-base pr-10 ">
-                  Trabajamos con sistemas de gestion de contenido como Wordpress, Joomla, Shopify o incluso Moodle para instituciones educativas.
+                  {translations.whyuslist.cmsdescription}
                 </p>
               </div>
               <Image

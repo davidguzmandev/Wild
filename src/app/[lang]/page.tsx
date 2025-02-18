@@ -5,6 +5,7 @@ import WeAre from "@/components/common/weare";
 import WhyUs from "@/components/partials/whyus";
 import Services from "@/components/partials/services";
 import Footer from "@/components/partials/footer";
+import Letstalk from "@/components/partials/letstalk";
 
 export default async function Home({
   params,
@@ -37,6 +38,7 @@ export default async function Home({
         translations={t}
       />
       <WhyUs translations={t}/>
+      <Letstalk translations={t}/>
       <Footer translations={t}/>
     </div>
   );

@@ -10,6 +10,8 @@
     "heroText": "We bring your idea or business to digital life on a page or web application.",
     "heroText2": "We make apps, websites and brands.",
     "talktous": "talk to us",
+    "letstalk": "Let's talk!",
+    "getintouch": "Get in Touch",
     "seeservices": "See Services",
     "our": "Our",
     "viewmore": "View more",
@@ -38,7 +40,17 @@
     "weare":"We are",
     "whatyouwant":"what you need us to be!",
     "whyus":"Why Us?",
+    "weareexcellentat":"We are excellent at",
     "innovation":"Innovation",
+    "projectinmind":"Have a project in mind?",
+    "letstalkdescription": "Share your idea or project with us. We will analyze your case and, from the beginning, we will provide you with valuable information to boost the growth of your business.",
+    "whyuslist": {
+      "webappdescription": "We create fast, efficient, secure and multi-platform compatible solutions, from conceptualization to implementation.",
+      "designuiux": "Design UI/UX",
+      "designuiuxdescription": "We create intuitive graphical user interfaces with functional optimizations in each element of the product.",
+      "webdevelopdescription": "Every website is different, so we make sure that every site we develop is unique and tailored to our clients' specific needs.",
+      "cmsdescription": "We work with content management systems such as Wordpress, Joomla, Shopify or even Moodle for educational institutions."
+    },
     "nav": {
       "create": "Create.",
       "code": "Program.",
