@@ -36,12 +36,32 @@ export default function Footer({ translations }: { translations: any }) {
           />
         </div>
         <div className="md:w-2/5 justify-center flex">
-          <nav className="text-3xl">
+          <nav className="text-3xl flex">
             <ul>
-              <li className="pb-6">About Us</li>
-              <li className="pb-6">Services</li>
-              <li className="pb-6">Products</li>
-              <li className="pb-6">Blog</li>
+              <li className="pb-4">
+                <span className="text-sm text-gray-500 align-top">
+                  01
+                </span>{" "}
+                {translations.aboutus}
+              </li>
+              <li className="pb-6">
+                <span className="text-sm text-gray-500 align-top">
+                  02
+                </span>{" "}
+                {translations.services}
+              </li>
+              <li className="pb-6">
+                <span className="text-sm text-gray-500 align-top">
+                  03
+                </span>{" "}
+                {translations.products}
+              </li>
+              <li className="pb-6">
+                <span className="text-sm text-gray-500 align-top">
+                  04
+                </span>{" "}
+                {translations.blog}
+              </li>
             </ul>
           </nav>
         </div>
@@ -49,9 +69,7 @@ export default function Footer({ translations }: { translations: any }) {
         <div className="md:w-2/5">
           <div className="text-xl mb-10">
             <p>
-              Si tienes dudas, preguntas o solo tener contacto directo con
-              nosotros, envianos un mensaje y estaremos encantados de ponernos
-              en contacto contigo.
+              {translations.doubts}
             </p>
           </div>
           <div className="gap-4 flex justify-between">
@@ -130,9 +148,9 @@ export default function Footer({ translations }: { translations: any }) {
       <div className="max-w-full mx-10 md:mx-14 lg:mx-28 md:flex justify-between">
         <div className="flex gap-20">
           <p>Copyright © 2025 Wild Project. All Rights Reserved.</p>
-          <p>Privacy Policy</p>
-          <p>Terms</p>
-          <p>Cookie Preferences</p>
+          <p>{translations.privacy}</p>
+          <p>{translations.terms}</p>
+          <p>{translations.cookies}</p>
         </div>
         <div className="flex">
           <IconBrandLinkedin stroke={2} />
