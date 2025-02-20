@@ -13,6 +13,7 @@ import {
   IconBrandWhatsappFilled,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+import Link from "next/link";
 
 export default function Footer({ translations }: { translations: any }) {
   const isVisible = useIntersectionObserver(0.5, "footer");
@@ -56,14 +57,11 @@ export default function Footer({ translations }: { translations: any }) {
           <div className="gap-4 flex justify-between">
             <div>
               <button
-                className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-tight cursor-pointer"
+                className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-500 uppercase text-lg tracking-tight cursor-pointer"
                 aria-label={translations.getintouch}>
                 <span className="inline-flex items-center gap-8">
                   {translations.getintouch}{" "}
-                  <IconMessage2
-                    stroke={2}
-                    className="group-hover:hidden"
-                  />{" "}
+                  <IconMessage2 stroke={2} className="group-hover:hidden" />{" "}
                   <IconMessageChatbot
                     stroke={2}
                     className="hidden group-hover:block group-hover:text-violet-500"
@@ -73,7 +71,7 @@ export default function Footer({ translations }: { translations: any }) {
             </div>
             <div>
               <button
-                className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 cursor-pointer hover:from-white hover:to-white"
+                className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer hover:from-white hover:to-white"
                 aria-label={translations.getintouch}>
                 <span className="inline-flex items-center gap-20">
                   <IconBrandWhatsapp
@@ -89,13 +87,10 @@ export default function Footer({ translations }: { translations: any }) {
             </div>
             <div>
               <button
-                className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 cursor-pointer hover:from-white hover:to-white"
+                className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer hover:from-white hover:to-white"
                 aria-label={translations.getintouch}>
                 <span className="inline-flex items-center gap-20">
-                  <IconMail
-                    stroke={2}
-                    className="group-hover:hidden"
-                  />{" "}
+                  <IconMail stroke={2} className="group-hover:hidden" />{" "}
                   <IconMailOpened
                     stroke={2}
                     className="hidden group-hover:block group-hover:text-violet-500"
@@ -104,23 +99,29 @@ export default function Footer({ translations }: { translations: any }) {
               </button>
             </div>
             <div>
-              <Link>
-              <button
-                className="group hover:scale-105 transition-all duration-600 cursor-pointer "
-                aria-label={translations.getintouch}>
-                <span className="inline-flex items-center gap-20">
-                  <IconCircleArrowUpFilled
-                    stroke={2}
-                    size={62}
-                    className="text-violet-500 group-hover:hidden"
-                  />{" "}
-                  <IconCircleArrowUp
-                    stroke={2}
-                    size={62}
-                    className="hidden group-hover:block group-hover:text-violet-500"
-                  />
-                </span>
-              </button>
+              <Link
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}>
+                <button
+                  className="group hover:scale-105 transition-all duration-500 cursor-pointer "
+                  aria-label={translations.getintouch}>
+                  <span className="inline-flex items-center gap-20">
+                    <IconCircleArrowUpFilled
+                      stroke={2}
+                      size={62}
+                      className="text-violet-500 group-hover:hidden"
+                    />{" "}
+                    <IconCircleArrowUp
+                      stroke={2}
+                      size={62}
+                      className="hidden group-hover:block group-hover:text-violet-500"
+                    />
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
