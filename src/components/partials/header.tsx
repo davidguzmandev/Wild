@@ -12,7 +12,7 @@ export default function Header({ navTranslations }: { navTranslations: any }) {
       fixed w-full z-50 transition-all duration-300
       ${isScrolled ? 'bg-white/50 backdrop-blur-sm' : 'bg-transparent'}
     `}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="home" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 w-24">
             <Link href="/">
