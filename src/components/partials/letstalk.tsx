@@ -24,7 +24,7 @@ export default function Letstalk({ translations }: { translations: any }) {
             {translations.letstalkdescription}
           </p>
           <button
-            className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-tight cursor-pointer"
+            className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-sm sm:text-lg tracking-tight cursor-pointer"
             aria-label={translations.getintouch}>
             <span className="inline-flex items-center gap-8">
               {translations.getintouch}{" "}

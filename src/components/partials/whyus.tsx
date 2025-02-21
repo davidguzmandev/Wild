@@ -27,7 +27,7 @@ export default function WhyUs({ translations }: { translations: any }) {
       className={`min-h-screen my-20 transition-all  ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}>
-      <div className="max-w-full px-8 sm:px-6 mb-20">
+      <div className="max-w-full px-8 sm:px-6 mb-20 lg:px-20">
         <div className="max-w-7xl w-full px-8 sm:px-6 lg:px-8 self-start mb-20">
           <p className="text-sm text-indigo-700 font-semibold tracking-widest uppercase before:content-[''] before:w-16 before:h-[1px] before:bg-gray-600 relative flex items-center gap-8">
             {translations.whyus}
@@ -60,14 +60,14 @@ export default function WhyUs({ translations }: { translations: any }) {
               </div>
               <Image
                 src={Webapp}
-                alt="Webapp"
+                alt={translations.listdevelop.webapp}
                 width={700}
                 height={700}
                 style={{
                   transform: `translateX(${position.card1?.x * 6}px) translateY(${position.card1?.y * 6}px)`,
                   transition: "transform 0.3s ease-out",
                 }}
-                className="absolute -bottom-70 xs:-bottom-130 sm:-bottom-30 xl:-bottom-60 2xl:-bottom-80 3xl:-bottom-105 4xl:-bottom-120"
+                className="absolute -bottom-70 xs:-bottom-130 sm:-bottom-30 xl:-bottom-60 2xl:-bottom-40 3xl:-bottom-105 4xl:-bottom-120"
               />
             </div>
 
@@ -91,7 +91,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                 </div>
                 <Image
                   src={Uiux}
-                  alt="Diseño UI/UX"
+                  alt={translations.whyuslist.designuiux}
                   width={407}
                   height={407}
                   style={{
@@ -121,7 +121,7 @@ export default function WhyUs({ translations }: { translations: any }) {
                 </div>
                 <Image
                   src={Websitedev}
-                  alt="websitedev"
+                  alt={translations.webdevelop}
                   width={220}
                   height={220}
                   style={{

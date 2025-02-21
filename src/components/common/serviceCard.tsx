@@ -36,9 +36,9 @@ export default function ServiceCard({
         `${navTranslations.listweb.landingpages}`,
         `${navTranslations.listweb.wordpressdevelop}`,
         `${navTranslations.listweb.joomladevelop}`,
-        `${navTranslations.listweb.moodledevelop}`
+        `${navTranslations.listweb.moodledevelop}`,
       ],
-      link: "#",
+      link: "services",
     },
     {
       title: `${navTranslations.design}`,
@@ -59,7 +59,7 @@ export default function ServiceCard({
       image: mobile,
       list: [
         `${navTranslations.listdevelop.webapp}`,
-        `${navTranslations.listdevelop.mobileapp}`
+        `${navTranslations.listdevelop.mobileapp}`,
       ],
       link: "#",
     },
@@ -72,7 +72,7 @@ export default function ServiceCard({
         `${navTranslations.listmarketing.socialmediamarketing}`,
         `${navTranslations.listmarketing.seo}`,
         `${navTranslations.listmarketing.advertising}`,
-        `${navTranslations.listmarketing.emailmarketing}`
+        `${navTranslations.listmarketing.emailmarketing}`,
       ],
       link: "#",
     },
@@ -85,7 +85,7 @@ export default function ServiceCard({
         `${navTranslations.listecommerce.ecommercedevelop}`,
         `${navTranslations.listecommerce.shopify}`,
         `${navTranslations.listecommerce.prestashop}`,
-        `${navTranslations.listecommerce.woocommerce}`
+        `${navTranslations.listecommerce.woocommerce}`,
       ],
       link: "#",
     },
@@ -95,10 +95,10 @@ export default function ServiceCard({
 
   return (
     <div
-      className="flex flex-col lg:flex-row gap-52 px-4 sm:px-6 lg:px-8"
+      className="flex flex-col lg:flex-row md:gap-20 lg:gap-52 px-4 sm:px-6 lg:px-8"
       id="list">
       {/* Services List */}
-      <div className="w-full lg:w-1/4 space-y-6 mx-20">
+      <div className="w-full lg:w-1/4 space-y-6 sm:mx-20">
         {services.map((service) => (
           <div
             key={service.title}
@@ -114,12 +114,17 @@ export default function ServiceCard({
               : "font-semibold text-gray-400 group-hover:text-gray-900"
           }
         `}>
-              <a href="#description">{service.title}</a>
+              {window.innerWidth < 1028 ? (
+                <Link href="#description">{service.title}</Link>
+              ) : (
+                <p>{service.title}</p>
+              )}
             </h3>
+            <p id="description"></p>
           </div>
         ))}
       </div>
-      <div className="sm:hidden m-10" id="description"></div>
+      <div className="sm:hidden m-10"></div>
       {/* Service Content */}
       <div className="w-full lg:w-3/4 mr-14">
         {services.map(
@@ -131,9 +136,7 @@ export default function ServiceCard({
                     <h2 className="text-3xl text-gray-700 sm:text-4xl font-bold tracking-tight">
                       {service.h2}
                     </h2>
-                    <p className="leading-relaxed">
-                      {service.description}
-                    </p>
+                    <p className="leading-relaxed">{service.description}</p>
 
                     {service.list && (
                       <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-4">
@@ -157,7 +160,7 @@ export default function ServiceCard({
                       <Link
                         href={service.link}
                         className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                        <span className="mr-2">{navTranslations.viewmore}</span>
+                        <span className="mr-2 text-sm sm:text-base">{navTranslations.viewmore}</span>
                         <IconArrowNarrowRight stroke={2} className="w-5 h-5" />
                       </Link>
                       <div className="sm:hidden">

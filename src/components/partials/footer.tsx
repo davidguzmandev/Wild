@@ -26,7 +26,7 @@ export default function Footer({ translations }: { translations: any }) {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}>
       <div className="max-w-full mx-10 md:mx-14 lg:mx-28 md:flex justify-center mb-16">
-        <div className="xl:w-1/5 px-10 text-center justify-center grid">
+        <div className="xl:w-1/5 px-10 text-center justify-center grid max-sm:mb-14">
           <Image
             src={Logo}
             alt="Logo Wild"
@@ -35,31 +35,23 @@ export default function Footer({ translations }: { translations: any }) {
             className="justify-center"
           />
         </div>
-        <div className="md:w-2/5 justify-center flex">
+        <div className="md:w-2/5 sm:justify-center flex">
           <nav className="text-3xl flex">
             <ul>
               <li className="pb-4">
-                <span className="text-sm text-gray-500 align-top">
-                  01
-                </span>{" "}
+                <span className="text-sm text-gray-500 align-top">01</span>{" "}
                 {translations.aboutus}
               </li>
               <li className="pb-6">
-                <span className="text-sm text-gray-500 align-top">
-                  02
-                </span>{" "}
+                <span className="text-sm text-gray-500 align-top">02</span>{" "}
                 {translations.services}
               </li>
               <li className="pb-6">
-                <span className="text-sm text-gray-500 align-top">
-                  03
-                </span>{" "}
+                <span className="text-sm text-gray-500 align-top">03</span>{" "}
                 {translations.products}
               </li>
               <li className="pb-6">
-                <span className="text-sm text-gray-500 align-top">
-                  04
-                </span>{" "}
+                <span className="text-sm text-gray-500 align-top">04</span>{" "}
                 {translations.blog}
               </li>
             </ul>
@@ -68,14 +60,12 @@ export default function Footer({ translations }: { translations: any }) {
 
         <div className="md:w-2/5">
           <div className="text-xl mb-10">
-            <p>
-              {translations.doubts}
-            </p>
+            <p>{translations.doubts}</p>
           </div>
-          <div className="gap-4 flex justify-between">
+          <div className="sm:gap-4 sm:flex sm:justify-between grid grid-cols-2">
             <div>
               <button
-                className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-500 uppercase text-lg tracking-tight cursor-pointer"
+                className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-500 uppercase text-sm md:text-lg tracking-tight cursor-pointer"
                 aria-label={translations.getintouch}>
                 <span className="inline-flex items-center gap-8">
                   {translations.getintouch}{" "}
@@ -87,10 +77,11 @@ export default function Footer({ translations }: { translations: any }) {
                 </span>
               </button>
             </div>
+
             <div>
               <button
                 className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer hover:from-white hover:to-white"
-                aria-label={translations.getintouch}>
+                aria-label="Whatsapp">
                 <span className="inline-flex items-center gap-20">
                   <IconBrandWhatsapp
                     stroke={2}
@@ -106,7 +97,7 @@ export default function Footer({ translations }: { translations: any }) {
             <div>
               <button
                 className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer hover:from-white hover:to-white"
-                aria-label={translations.getintouch}>
+                aria-label="Mail">
                 <span className="inline-flex items-center gap-20">
                   <IconMail stroke={2} className="group-hover:hidden" />{" "}
                   <IconMailOpened
@@ -125,7 +116,7 @@ export default function Footer({ translations }: { translations: any }) {
                 }}>
                 <button
                   className="group hover:scale-105 transition-all duration-500 cursor-pointer "
-                  aria-label={translations.getintouch}>
+                  aria-label="Go Up">
                   <span className="inline-flex items-center gap-20">
                     <IconCircleArrowUpFilled
                       stroke={2}
