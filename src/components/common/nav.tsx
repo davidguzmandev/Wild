@@ -1,33 +1,55 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconWorld, IconMenu2, IconX, IconMug, IconCoffee } from "@tabler/icons-react";
+import {
+  IconWorld,
+  IconMenu2,
+  IconX,
+  IconMug,
+  IconCoffee,
+} from "@tabler/icons-react";
 import { useState } from "react";
 
 export default function Nav({ translations }: { translations: any }) {
   const pathname = usePathname();
   const isEn = pathname.startsWith("/en");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [dropdown, setDropdown] = useState<{ [key: string]: boolean }>({});
 
   const navItems = [
     {
       title: `${translations.services}`,
       label: `${translations.services}`.toLowerCase(),
       url: `/services`,
+      dropdownItems: [
+        { title: "Service 1", url: "/services/1" },
+        { title: "Service 2", url: "/services/2" },
+        { title: "Service 3", url: "/services/3" },
+      ],
     },
     {
       title: `${translations.products}`,
       label: `${translations.products}`.toLowerCase(),
-      url: `#`,
+      url: `/products`,
+      dropdownItems: [
+        { title: "Product 1", url: "/products/1" },
+        { title: "Product 2", url: "/products/2" },
+        { title: "Product 3", url: "/products/3" },
+      ],
     },
     {
       title: `${translations.blog}`,
       label: `${translations.blog}`.toLowerCase(),
-      url: `#`,
+      url: `/blog`,
+      dropdownItems: [
+        { title: "Blog 1", url: "/blog/1" },
+        { title: "Blog 2", url: "/blog/2" },
+        { title: "Blog 3", url: "/blog/3" },
+      ],
     },
     {
       title: `${translations.contact}`,
       label: `${translations.contact}`.toLowerCase(),
-      url: `#`,
+      url: `/contact`,
     },
   ];
 
@@ -35,17 +57,44 @@ export default function Nav({ translations }: { translations: any }) {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleMouseEnter = (label: string) => {
+    setDropdown({ ...dropdown, [label]: true });
+  };
+
+  const handleMouseLeave = (label: string) => {
+    setDropdown({ ...dropdown, [label]: false });
+  };
+
   return (
     <div className="relative">
       {/* Menú de escritorio (oculto en móviles) */}
       <div className="hidden md:flex space-x-14">
         {navItems.map((item) => (
-          <Link
+          <div
             key={item.label}
-            href={item.url}
-            className="hover:text-gray-100 transition duration-300 text-md font-medium uppercase tracking-wider">
-            {item.title}
-          </Link>
+            className="group relative" // Añadimos la clase 'group'
+            onMouseEnter={() => handleMouseEnter(item.label)}
+            onMouseLeave={() => handleMouseLeave(item.label)}>
+            <button className="hover:text-gray-100 transition duration-300 text-md font-medium uppercase tracking-wider">
+              {item.title}
+            </button>
+            {item.dropdownItems && (
+              <div
+                className={`absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 ${
+                  dropdown[item.label] ? "block" : "hidden"
+                }`} // Controlamos la visibilidad con clases de Tailwind
+              >
+                {item.dropdownItems.map((dropdownItem) => (
+                  <Link
+                    key={dropdownItem.url}
+                    href={dropdownItem.url}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    {dropdownItem.title}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
         <Link
           href={isEn ? "/es" : "/en"}
@@ -69,7 +118,9 @@ export default function Nav({ translations }: { translations: any }) {
 
       {/* Menú desplegable (visible en móviles) */}
       <div
-        className={`fixed top-0 left-0 w-full min-h-screen bg-white z-30 transition-transform duration-1000 ease-in-out transform ${isMenuOpen ? "-translate-x-0" : "translate-x-full"}`}>
+        className={`fixed top-0 left-0 w-full min-h-screen bg-white z-30 transition-transform duration-1000 ease-in-out transform ${
+          isMenuOpen ? "-translate-x-0" : "translate-x-full"
+        }`}>
         {isMenuOpen && (
           <div className="relative">
             <div className="absolute top-4 right-4 z-40">
