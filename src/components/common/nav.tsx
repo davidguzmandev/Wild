@@ -12,7 +12,7 @@ export default function Nav({ translations }: { translations: any }) {
     {
       title: `${translations.services}`,
       label: `${translations.services}`.toLowerCase(),
-      url: `#`,
+      url: `/services`,
     },
     {
       title: `${translations.products}`,
