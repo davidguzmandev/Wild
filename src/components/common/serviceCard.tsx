@@ -1,10 +1,5 @@
 "use client";
-import Image from "next/image";
-import web from "@/images/web.webp";
-import design from "@/images/design.webp";
-import mobile from "@/images/mobile.webp";
-import marketing from "@/images/marketing.webp";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   IconArrowNarrowRight,
@@ -17,7 +12,6 @@ interface Service {
   title: string;
   description: string;
   link: string;
-  image: string;
 }
 
 export default function ServiceCard({
@@ -25,12 +19,19 @@ export default function ServiceCard({
 }: {
   navTranslations: any;
 }) {
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 1028);
+    }
+  }, []);
+
   const services = [
     {
       title: `${navTranslations.web}`,
       h2: `${navTranslations.webdesign}`,
       description: `${navTranslations.webdescription}`,
-      image: web,
       list: [
         `${navTranslations.listweb.websites}`,
         `${navTranslations.listweb.landingpages}`,
@@ -44,7 +45,6 @@ export default function ServiceCard({
       title: `${navTranslations.design}`,
       h2: `${navTranslations.digitaldesign}`,
       description: `${navTranslations.designdescription}`,
-      image: design,
       list: [
         `${navTranslations.listdesign.logodesign}`,
         `${navTranslations.listdesign.brandidentity}`,
@@ -56,7 +56,6 @@ export default function ServiceCard({
       title: `${navTranslations.develop}`,
       h2: `${navTranslations.appdevelop}`,
       description: `${navTranslations.appdevelopdescription}`,
-      image: mobile,
       list: [
         `${navTranslations.listdevelop.webapp}`,
         `${navTranslations.listdevelop.mobileapp}`,
@@ -67,7 +66,6 @@ export default function ServiceCard({
       title: `${navTranslations.marketing}`,
       h2: `${navTranslations.digitalmarketing}`,
       description: `${navTranslations.marketingdescription}`,
-      image: marketing,
       list: [
         `${navTranslations.listmarketing.socialmediamarketing}`,
         `${navTranslations.listmarketing.seo}`,
@@ -80,7 +78,6 @@ export default function ServiceCard({
       title: `${navTranslations.ecommerce}`,
       h2: `${navTranslations.onlineshops}`,
       description: `${navTranslations.ecommercedescription}`,
-      image: marketing,
       list: [
         `${navTranslations.listecommerce.ecommercedevelop}`,
         `${navTranslations.listecommerce.shopify}`,
@@ -114,7 +111,7 @@ export default function ServiceCard({
               : "font-semibold text-gray-400 group-hover:text-gray-900"
           }
         `}>
-              {window.innerWidth < 1028 ? (
+              {isMobile ? (
                 <Link href="#description">{service.title}</Link>
               ) : (
                 <p>{service.title}</p>

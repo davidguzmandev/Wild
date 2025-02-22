@@ -66,6 +66,8 @@ export default function WhyUs({ translations }: { translations: any }) {
                 style={{
                   transform: `translateX(${position.card1?.x * 6}px) translateY(${position.card1?.y * 6}px)`,
                   transition: "transform 0.3s ease-out",
+                  width: "auto", // Mantiene la proporción original
+                  height: "auto",
                 }}
                 className="absolute -bottom-70 xs:-bottom-130 sm:-bottom-30 xl:-bottom-60 2xl:-bottom-40 3xl:-bottom-105 4xl:-bottom-120"
               />
@@ -97,8 +99,10 @@ export default function WhyUs({ translations }: { translations: any }) {
                   style={{
                     transform: `translateX(${position.card2?.x * 4}px) translateY(${position.card2?.y * 2}px)`,
                     transition: "transform 0.3s ease-out",
+                    width: "auto", // Mantiene la proporción original
+                    height: "auto",
                   }}
-                  className="absolute -bottom-20 -right-40 sm:-right-30"
+                  className="absolute -bottom-10 -right-40 sm:-right-20"
                 />
               </div>
 
@@ -122,13 +126,15 @@ export default function WhyUs({ translations }: { translations: any }) {
                 <Image
                   src={Websitedev}
                   alt={translations.webdevelop}
-                  width={220}
-                  height={220}
+                  width={190}
+                  height={190}
                   style={{
                     transform: `translateX(${position.card3?.x * 4}px) translateY(${position.card3?.y * 2}px)`,
                     transition: "transform 0.3s ease-out",
+                    width: "auto", // Mantiene la proporción original
+                    height: "auto",
                   }}
-                  className="absolute -bottom-25 -right-20 sm:-right-10"
+                  className="absolute -bottom-15 -right-20 sm:-right-10"
                 />
               </div>
             </div>
