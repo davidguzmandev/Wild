@@ -65,11 +65,11 @@ export default function Hero({
                 {navTranslations.talktous}{" "}
                 <IconMug
                   stroke={2}
-                  className="group-hover:hidden group-hover:text-white"
+                  className="group-hover:hidden group-active:hidden"
                 />{" "}
                 <IconCoffee
                   stroke={2}
-                  className="hidden group-hover:block group-hover:text-violet-500"
+                  className="hidden group-hover:block group-active:block text-violet-500 group-active:text-violet-500"
                 />
               </span>
             </button>
