@@ -85,7 +85,7 @@ export default function Footer({ translations }: { translations: any }) {
             <div className="flex justify-center sm:justify-start gap-4 ">
               {/* Botón WhatsApp */}
               <button
-                className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-5 group hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer hover:from-white hover:to-white"
+                className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer hover:from-white hover:to-white"
                 aria-label="Whatsapp">
                 <span className="inline-flex items-center gap-20">
                   <IconBrandWhatsapp
@@ -101,7 +101,7 @@ export default function Footer({ translations }: { translations: any }) {
 
               {/* Botón Mail */}
               <button
-                className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-5 group hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer hover:from-white hover:to-white"
+                className="bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer hover:from-white hover:to-white"
                 aria-label="Mail">
                 <span className="inline-flex items-center gap-20">
                   <IconMail stroke={2} className="group-hover:hidden" />{" "}
