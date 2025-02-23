@@ -6,14 +6,22 @@ import {
   IconX,
   IconMug,
   IconCoffee,
+  IconPhotoCode,
+  IconPencilBolt,
+  IconDeviceMobileCode,
+  IconBuildingStore,
+  IconShoppingCart,
 } from "@tabler/icons-react";
 import { useState } from "react";
+import rooster from "@/images/rooster.webp";
+import Image from "next/image";
 
 export default function Nav({ translations }: { translations: any }) {
   const pathname = usePathname();
   const isEn = pathname.startsWith("/en");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState<{ [key: string]: boolean }>({});
+  const timeouts: { [key: string]: NodeJS.Timeout } = {};
 
   const navItems = [
     {
@@ -21,9 +29,36 @@ export default function Nav({ translations }: { translations: any }) {
       label: `${translations.services}`.toLowerCase(),
       url: `/services`,
       dropdownItems: [
-        { title: "Service 1", url: "/services/1" },
-        { title: "Service 2", url: "/services/2" },
-        { title: "Service 3", url: "/services/3" },
+        {
+          title: `${translations.listweb.websites}`,
+          description: `${translations.websitestext}`,
+          icon: <IconPhotoCode stroke={2} />,
+          url: "/services/websites",
+        },
+        {
+          title: `${translations.develop}`,
+          description: `${translations.developtext}`,
+          icon: <IconDeviceMobileCode stroke={2} />,
+          url: "/services/develop",
+        },
+        {
+          title: `${translations.design}`,
+          description: `${translations.designtext}`,
+          icon: <IconPencilBolt stroke={2} />,
+          url: "/services/design",
+        },
+        {
+          title: `${translations.marketing}`,
+          description: `${translations.marketingtext}`,
+          icon: <IconBuildingStore stroke={2} />,
+          url: "/services/marketing",
+        },
+        {
+          title: `${translations.ecommerce}`,
+          description: `${translations.ecommercetext}`,
+          icon: <IconShoppingCart stroke={2} />,
+          url: "/services/ecommerce",
+        },
       ],
     },
     {
@@ -31,20 +66,18 @@ export default function Nav({ translations }: { translations: any }) {
       label: `${translations.products}`.toLowerCase(),
       url: `/products`,
       dropdownItems: [
-        { title: "Product 1", url: "/products/1" },
-        { title: "Product 2", url: "/products/2" },
-        { title: "Product 3", url: "/products/3" },
+        {
+          title: `Rooster`,
+          description: `${translations.roostertext}`,
+          image: rooster,
+          url: "/products/rooster",
+        },
       ],
     },
     {
       title: `${translations.blog}`,
       label: `${translations.blog}`.toLowerCase(),
       url: `/blog`,
-      dropdownItems: [
-        { title: "Blog 1", url: "/blog/1" },
-        { title: "Blog 2", url: "/blog/2" },
-        { title: "Blog 3", url: "/blog/3" },
-      ],
     },
     {
       title: `${translations.contact}`,
@@ -58,29 +91,36 @@ export default function Nav({ translations }: { translations: any }) {
   };
 
   const handleMouseEnter = (label: string) => {
-    setDropdown({ ...dropdown, [label]: true });
+    if (timeouts[label]) clearTimeout(timeouts[label]); // Cancela el cierre si el usuario regresa rápido
+    setDropdown((prev) => ({ ...prev, [label]: true }));
   };
 
   const handleMouseLeave = (label: string) => {
-    setDropdown({ ...dropdown, [label]: false });
+    timeouts[label] = setTimeout(() => {
+      setDropdown((prev) => ({ ...prev, [label]: false }));
+    }, 300); // ⏳ Espera 300ms antes de ocultar el dropdown
   };
 
   return (
     <div className="relative">
       {/* Menú de escritorio (oculto en móviles) */}
-      <div className="hidden md:flex space-x-14">
+      <div className="hidden md:flex space-x-6 lg:space-x-10">
         {navItems.map((item) => (
           <div
             key={item.label}
             className="group relative" // Añadimos la clase 'group'
-            onMouseEnter={() => handleMouseEnter(item.label)}
-            onMouseLeave={() => handleMouseLeave(item.label)}>
-            <button className="hover:text-gray-100 transition duration-300 text-md font-medium uppercase tracking-wider">
+          >
+            <button
+              onMouseEnter={() => handleMouseEnter(item.label)}
+              onMouseLeave={() => handleMouseLeave(item.label)}
+              className="transition duration-300 text-md font-medium uppercase tracking-wider rounded-lg group-hover:bg-white p-4 cursor-pointer">
               {item.title}
             </button>
             {item.dropdownItems && (
               <div
-                className={`absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10 ${
+                onMouseEnter={() => handleMouseEnter(item.label)}
+                onMouseLeave={() => handleMouseLeave(item.label)}
+                className={`group absolute top-12 left-0 w-80 bg-white rounded-b-lg rounded-r-lg shadow-lg z-10 ${
                   dropdown[item.label] ? "block" : "hidden"
                 }`} // Controlamos la visibilidad con clases de Tailwind
               >
@@ -88,8 +128,27 @@ export default function Nav({ translations }: { translations: any }) {
                   <Link
                     key={dropdownItem.url}
                     href={dropdownItem.url}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    {dropdownItem.title}
+                    className="block px-2 my-2 text-gray-700">
+                    <div className="flex gap-2 hover:bg-indigo-50 rounded-lg p-2">
+                      {dropdownItem.image ? (
+                        <Image
+                          src={dropdownItem.image}
+                          alt={dropdownItem.title}
+                          width={32}
+                          height={32}
+                          className="w-8 h-8 object-contain shrink-0"
+                        />
+                      ) : (
+                        ""
+                      )}
+                      {dropdownItem.icon && <p>{dropdownItem.icon}</p>}
+                      <div>
+                        <p className="text-base font-semibold">
+                          {dropdownItem.title}
+                        </p>
+                        <p className="text-xs">{dropdownItem.description}</p>
+                      </div>
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -106,8 +165,8 @@ export default function Nav({ translations }: { translations: any }) {
       </div>
 
       {/* Botón de hamburguesa (visible en móviles) */}
-      <div className="md:hidden z-20">
-        <button onClick={toggleMenu} className="focus:outline-none">
+      <div className="md:hidden z-20 cursor-pointer">
+        <button onClick={toggleMenu} className="focus:outline-none cursor-pointer">
           {isMenuOpen ? (
             <IconX stroke={1.5} className="w-8 h-8" />
           ) : (
@@ -124,7 +183,7 @@ export default function Nav({ translations }: { translations: any }) {
         {isMenuOpen && (
           <div className="relative">
             <div className="absolute top-4 right-4 z-40">
-              <button onClick={toggleMenu} className="focus:outline-none">
+              <button onClick={toggleMenu} className="focus:outline-none cursor-pointer">
                 <IconX stroke={1.5} className="w-8 h-8" />
               </button>
             </div>
