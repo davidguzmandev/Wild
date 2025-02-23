@@ -29,16 +29,16 @@ export default function Hero({
       </div>
       <div className="justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1 max-sm:mt-24">
         <div className="sm:mt-20 animate-fade-in-down">
-          <h1 className="text-lg font-bold text-gray-900 mb-6 text-left leading-tight uppercase">
+          <h2 className="text-lg font-bold text-gray-900 mb-6 text-left leading-tight uppercase">
             {navTranslations.we}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">
               {" "}
               {currentWord}
               <span className="text-indigo-500">{cursor}</span>
             </span>
-          </h1>
+          </h2>
           <div className="flex">
-            <h2 className="text-left font-semibold text-6xl sm:w-1/2">
+            <h1 className="text-left font-semibold text-6xl sm:w-1/2">
               {navTranslations.heroText2.split(" ").map((word, index) => {
                 // Palabras a resaltar
                 const wordsToHighlight = ["sitios", "web", "websites"];
@@ -55,7 +55,7 @@ export default function Hero({
                 // Si no es una palabra a resaltar, solo muestra la palabra sin cambios
                 return <span key={index}>{word} </span>;
               })}
-            </h2>
+            </h1>
           </div>
           <div className="flex mt-10 ">
             <button

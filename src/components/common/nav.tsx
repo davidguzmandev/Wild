@@ -110,17 +110,18 @@ export default function Nav({ translations }: { translations: any }) {
             key={item.label}
             className="group relative" // Añadimos la clase 'group'
           >
-            <button
+            <Link
+              href={item.url}
               onMouseEnter={() => handleMouseEnter(item.label)}
               onMouseLeave={() => handleMouseLeave(item.label)}
               className="transition duration-300 text-md font-medium uppercase tracking-wider rounded-lg group-hover:bg-white p-4 cursor-pointer">
               {item.title}
-            </button>
+            </Link>
             {item.dropdownItems && (
               <div
                 onMouseEnter={() => handleMouseEnter(item.label)}
                 onMouseLeave={() => handleMouseLeave(item.label)}
-                className={`group absolute top-12 left-0 w-80 bg-white rounded-b-lg rounded-r-lg shadow-lg z-10 ${
+                className={`group absolute top-8 left-0 w-80 bg-white rounded-b-lg rounded-r-lg shadow-lg z-10 ${
                   dropdown[item.label] ? "block" : "hidden"
                 }`} // Controlamos la visibilidad con clases de Tailwind
               >
@@ -166,7 +167,9 @@ export default function Nav({ translations }: { translations: any }) {
 
       {/* Botón de hamburguesa (visible en móviles) */}
       <div className="md:hidden z-20 cursor-pointer">
-        <button onClick={toggleMenu} className="focus:outline-none cursor-pointer">
+        <button
+          onClick={toggleMenu}
+          className="focus:outline-none cursor-pointer">
           {isMenuOpen ? (
             <IconX stroke={1.5} className="w-8 h-8" />
           ) : (
@@ -183,7 +186,9 @@ export default function Nav({ translations }: { translations: any }) {
         {isMenuOpen && (
           <div className="relative">
             <div className="absolute top-4 right-4 z-40">
-              <button onClick={toggleMenu} className="focus:outline-none cursor-pointer">
+              <button
+                onClick={toggleMenu}
+                className="focus:outline-none cursor-pointer">
                 <IconX stroke={1.5} className="w-8 h-8" />
               </button>
             </div>
