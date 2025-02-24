@@ -12,11 +12,12 @@ export default async function Services({
 }) {
   const lang = (await params).lang;
   const t = await (await getDictionary(lang)).home;
+  const t2 = await (await getDictionary(lang)).services;
 
   return (
     <div className="scroll-smooth">
       <Header navTranslations={t} />
-      <Hero translations={t} />
+      <Hero translations={t} translations2={t2} />
       <WhyUs translations={t}/>
       <Letstalk translations={t}/>
       <Footer translations={t}/>

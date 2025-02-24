@@ -109,6 +109,12 @@
     }
   },
 
+  "services":{
+    "turning": "Transformando ",
+    "ideas": "ideas",
+    "h1": "en productos digitales"
+  },
+
   "login": {
     "title": "Login",
     "username": "Usuario",

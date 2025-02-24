@@ -108,6 +108,13 @@
       "aproject": "a Project."
     }
   },
+
+  "services":{
+    "turning": "Turning",
+    "ideas": "ideas",
+    "h1": "into digital products"
+  },
+
   "login": {
     "title": "Login",
     "username": "User",
