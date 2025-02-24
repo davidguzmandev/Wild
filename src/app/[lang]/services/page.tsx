@@ -1,9 +1,7 @@
 import Header from "@/components/partials/header";
 import Hero from "@/components/partials/services/hero";
 import { getDictionary } from "../../i18n/dictionary";
-import WeAre from "@/components/common/weare";
 import WhyUs from "@/components/partials/whyus";
-
 import Footer from "@/components/partials/footer";
 import Letstalk from "@/components/partials/letstalk";
 
@@ -18,21 +16,7 @@ export default async function Services({
   return (
     <div className="scroll-smooth">
       <Header navTranslations={t} />
-      <Hero
-        navTranslations={t}
-        texts={[
-          t.nav.create,
-          t.nav.code,
-          t.nav.develop,
-          t.nav.design,
-          t.nav.imagine,
-          t.nav.build,
-          t.nav.innovate,
-          t.nav.invent,
-          t.nav.transform,
-          t.nav.craft,
-        ]}
-      />
+      <Hero translations={t} />
       <WhyUs translations={t}/>
       <Letstalk translations={t}/>
       <Footer translations={t}/>

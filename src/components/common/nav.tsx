@@ -101,6 +101,12 @@ export default function Nav({ translations }: { translations: any }) {
     }, 300); // ⏳ Espera 300ms antes de ocultar el dropdown
   };
 
+  // Remueve el idioma actual del pathname
+  const newPathname = pathname.replace(/^\/(en|es)/, "");
+
+  // Construye la nueva ruta con el idioma cambiado
+  const newLocalePath = isEn ? `/es${newPathname}` : `/en${newPathname}`;
+
   return (
     <div className="relative">
       {/* Menú de escritorio (oculto en móviles) */}
@@ -157,7 +163,7 @@ export default function Nav({ translations }: { translations: any }) {
           </div>
         ))}
         <Link
-          href={isEn ? "/es" : "/en"}
+          href={newLocalePath}
           className="flex items-center gap-2 text-gray-700 hover:text-indigo-600 transition"
           scroll={false}>
           <IconWorld stroke={1.25} className="w-4 h-4" />
