@@ -1,7 +1,7 @@
-"use client";
 import { IconCoffee, IconMug } from "@tabler/icons-react";
 import Image from "next/image";
 import Background from "@/images/background.webp";
+import Services from "@/images/services.webp";
 
 interface RandomTextComponentProps {
   words: string[];
@@ -50,6 +50,14 @@ export default function Hero({
               </span>
             </button>
           </div>
+        </div>
+        <div className="w-24 h-24">
+          <Image 
+          src={Services} 
+          alt="services" 
+          fill 
+          className=""
+          />
         </div>
       </div>
     </section>
