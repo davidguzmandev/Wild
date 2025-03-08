@@ -4,6 +4,7 @@ import { getDictionary } from "../../i18n/dictionary";
 import WhyUs from "@/components/partials/whyus";
 import Footer from "@/components/partials/footer";
 import Letstalk from "@/components/partials/letstalk";
+import ServiceCard from "@/components/partials/services/servicecard";
 
 export default async function Services({
   params,
@@ -18,6 +19,7 @@ export default async function Services({
     <div className="scroll-smooth">
       <Header navTranslations={t} />
       <Hero translations={t} translations2={t2} />
+      <ServiceCard translations={t} />
       <WhyUs translations={t}/>
       <Letstalk translations={t}/>
       <Footer translations={t}/>
