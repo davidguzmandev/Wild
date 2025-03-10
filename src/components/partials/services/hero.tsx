@@ -2,10 +2,6 @@ import { IconCoffee, IconMug } from "@tabler/icons-react";
 import Image from "next/image";
 import Services from "@/images/services.webp";
 
-interface RandomTextComponentProps {
-  words: string[];
-}
-
 export default function Hero({
   translations,
   translations2,
@@ -14,8 +10,8 @@ export default function Hero({
   translations2: any;
 }) {
   return (
-    <section className="min-h-screen px-2 relative flex flex-col justify-center">
-      <div className="justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 order-1 max-sm:mt-24">
+    <section className="px-2 min-h-screen flex flex-col justify-center">
+      <div className="justify-center max-w-7xl mx-auto flex px-4 sm:px-6 lg:px-8 relative z-10 order-1 max-sm:mt-24">
         <div className="sm:mt-20 animate-fade-in-down z-30 relative">
           <div className="flex">
             <h1 className="text-left font-semibold text-6xl lg:w-1/2">
@@ -42,7 +38,7 @@ export default function Hero({
             </button>
           </div>
         </div>
-        <div className="absolute lg:-bottom-50 lg:-right-10 z-10">
+        <div className="absolute right-0 z-10">
           <Image src={Services} alt="services" width={768} height={768} />
         </div>
       </div>

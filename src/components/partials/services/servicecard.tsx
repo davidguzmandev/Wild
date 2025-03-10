@@ -12,7 +12,7 @@ export default function ServiceCard({ translations }: { translations: any }) {
   ];
 
   return (
-    <section className="px-2 relative flex flex-col justify-center">
+    <section className="px-2 flex flex-col justify-center">
       {cards.map((card, index) => (
         <div
           key={index}
