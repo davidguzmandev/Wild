@@ -13,7 +13,9 @@
     "@tailwindcss/postcss": "^4.0.5",
     "@types/gsap": "^1.20.2",
     "autoprefixer": "^10.4.20",
+    "clsx": "^2.1.1",
     "gsap": "^3.12.7",
+    "lucide-react": "^0.479.0",
     "next": "^15.1.6",
     "next-i18next": "^15.4.2",
     "next-intl": "^3.26.3",
@@ -21,6 +23,7 @@
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.0",
     "react-intersection-observer": "^9.15.1",
+    "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.5"
   },
   "devDependencies": {

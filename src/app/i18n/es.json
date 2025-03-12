@@ -111,6 +111,7 @@
   },
 
   "services":{
+    "digitalservices" : "Servicios Digitales Profesionales",
     "turning": "Transformando ideas en",
     "h1": "experiencias digitales",
     "herotext":"Estamos comprometidos con la creación de soluciones web y móviles con diseño minimalista y alto rendimiento."

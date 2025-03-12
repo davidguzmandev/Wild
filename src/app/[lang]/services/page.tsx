@@ -4,7 +4,7 @@ import { getDictionary } from "../../i18n/dictionary";
 import WhyUs from "@/components/partials/whyus";
 import Footer from "@/components/partials/footer";
 import Letstalk from "@/components/partials/letstalk";
-import ServiceCard from "@/components/partials/services/servicecard";
+import ServiceCard from "@/components/partials/services/service";
 
 export default async function Services({
   params,

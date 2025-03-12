@@ -10,16 +10,21 @@ export default function Hero({
   translations2: any;
 }) {
   return (
-    <section className="px-2 min-h-screen flex flex-col justify-center">
+    <section className="relative py-20 md:py-32 px-4 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-slate-50 z-[-1]"></div>
       <div className="justify-center max-w-7xl mx-auto flex px-4 sm:px-6 lg:px-8 relative z-10 order-1 max-sm:mt-24">
-        <div className="sm:mt-20 animate-fade-in-down z-30 relative ">
-          <div className="">
-            <h1 className="text-center font-semibold text-6xl lg:w-5xl">
-              {translations2.turning}{" "}
-              {translations2.ideas}{" "}
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-indigo-100 text-indigo-800 animate-fade-in">
+              {translations2.digitalservices}
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-fade-up">
+              {translations2.turning} {translations2.ideas}{" "}
               <span className="text-indigo-600">{translations2.h1}</span>
             </h1>
-            <p>{translations.services.herotext}</p>
+            <p className="text-lg text-slate-600 animate-fade-up">
+              {translations2.herotext}
+            </p>
           </div>
           <div className="flex mt-10 justify-center">
             <button

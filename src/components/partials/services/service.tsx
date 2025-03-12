@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Briefcase, Code, LayoutGrid, ThumbsUp, MessageSquare, LayoutTemplate, PencilRuler, Smartphone } from 'lucide-react';
+import ServiceCard from '@/components/common/ServiceCard';
 import Web from "@/public/images/web.webp";
 import Mobile from "@/public/images/mobile.webp";
 import Design from "@/public/images/design.webp";
@@ -11,44 +13,73 @@ export default function ServiceCard({ translations }: { translations: any }) {
     {
       title: `${translations.listweb.websites}`,
       description: `${translations.websitestext}`,
-      image: Web,
+      icon: LayoutGrid,
       link: "/services/websites",
     },
     {
       title: `${translations.appdevelop}`,
       description: `${translations.appdeveloptext}`,
-      image: Mobile,
+      icon: Smartphone,
       link: "/services/websites",
     },
     {
       title: `${translations.digitaldesign}`,
       description: `${translations.designtext}`,
-      image: Design,
+      icon: PencilRuler,
       link: "/services/websites",
     },
     {
       title: `${translations.marketing}`,
       description: `${translations.marketingtext}`,
-      image: Marketing,
+      icon: ThumbsUp,
       link: "/services/websites",
     },
     {
       title: `${translations.ecommerce}`,
       description: `${translations.ecommercetext}`,
-      image: Ecommerce,
+      image: Briefcase,
       link: "/services/websites",
     },
     {
       title: `${translations.cms}`,
       description: `${translations.whyuslist.cmsdescription}`,
-      image: Cms,
+      icon: LayoutTemplate,
       link: "/services/websites",
     },
   ];
 
   return (
-    <section className="px-2 flex flex-wrap justify-center gap-10 max-w-7xl mx-auto">
+    <section id="services" className="py-24 px-4 overflow-hidden">
+      <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-3xl mx-auto text-center space-y-4 animate-fade-in">
+          <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-50 text-blue-600">
+            Nuestros Servicios
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Soluciones digitales para impulsar tu negocio
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Ofrecemos servicios digitales integrales para ayudar a tu empresa a crecer en el entorno digital con soluciones personalizadas y de alta calidad.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {cards.map((service, index) => (
+            <ServiceCard
+              key={index}
+              index={index}
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+              className="animate-fade-up"
+            />
+          ))}
+          </div>
+          </div>
+        
       {cards.map((card, index) => (
+
+      
         <div
           key={index}
           className="group relative flex w-80 flex-col rounded-xl bg-white text-gray-700 shadow-md border border-gray-300">

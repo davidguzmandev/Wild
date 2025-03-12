@@ -1,6 +1,6 @@
 "use client";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import ServiceCard from "@/components/common/serviceCard";
+import ServiceCard from "@/components/common/servicesHome";
 
 // Tipado de las props de la página
 interface Service {
