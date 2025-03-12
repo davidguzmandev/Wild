@@ -25,14 +25,15 @@
     "cms": "CMS",
     "marketing": "Marketing",
     "webdesign": "Web Design",
-    "websitestext":"Development of custom web pages",
-    "designtext":"Striking and eye-catching digital design",
+    "websitestext":"The perfect solution to take your business or project to the next level",
+    "designtext":"Our creativity is ready to help you stand out in the market",
     "developtext":"Development of web and mobile applications",
     "marketingtext":"Campaigns focused on getting you clients",
     "roostertext":"Record of an employee's working hours at any location designated by the employer",
     "ecommercetext":"Your online business, with virtual stores and secure payments",
     "webdescription": "We create impressive and functional web designs, optimized with advanced UX/UI strategies. ",
     "appdevelop": "Application Development",
+    "appdeveloptext": "Development of custom web and mobile applications",
     "appdevelopdescription": "We develop custom applications with advanced technology and intuitive design, offering fast, secure solutions compatible with multiple platforms, from conceptualization to implementation.",
     "digitalmarketing": "Digital Marketing",
     "marketingdescription": "We approach digital marketing as a fusion of technical expertise, creativity and innovation, designing customized solutions that optimize every aspect to boost your online presence and achieve measurable results.",
@@ -110,9 +111,9 @@
   },
 
   "services":{
-    "turning": "Turning",
-    "ideas": "ideas",
-    "h1": "into digital products"
+    "turning": "Turning ideas in",
+    "h1": "digital experiences",
+    "herotext":"We are committed to creating web and mobile solutions with minimalist design and high performance."
   },
 
   "login": {

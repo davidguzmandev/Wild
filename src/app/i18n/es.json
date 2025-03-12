@@ -25,14 +25,15 @@
     "cms": "CMS",
     "marketing": "Marketing",
     "webdesign": "Diseño Web",
-    "websitestext":"Desarrollo de paginas web a la medida",
-    "designtext":"Diseño digital impactante y llamativo",
+    "websitestext":"La solución perfecta para impulsar tu negocio o proyecto al siguiente nivel",
+    "designtext":"Nuestra creatividad esta dispuesta a ayudarte a destacar en el mercado",
     "developtext":"Desarrollo de aplicaciones web y moviles",
     "marketingtext":"Campañas enfocadas a conseguirte clientes",
     "ecommercetext":"Tu negocio en linea, con tiendas virtuales y pagos seguros",
     "roostertext":"Registro de las horas de trabajo de un empleado en cualquier lugar establecido por el empleador.",
     "webdescription": "Creamos diseños web impactantes y funcionales, optimizados con estrategias avanzadas de UX/UI. Adaptamos cada diseño a las necesidades de tu audiencia, asegurando una navegación fluida y atractiva en todos los dispositivos, convirtiendo visitantes en clientes.",
     "appdevelop": "Desarrollo de Aplicaciones",
+    "appdeveloptext": "Desarrollo de aplicaciones web y moviles a la medida",
     "appdevelopdescription": "Desarrollamos aplicaciones personalizadas con tecnología avanzada y diseño intuitivo, ofreciendo soluciones rápidas, seguras y compatibles con múltiples plataformas, desde la conceptualización hasta la implementación.",
     "digitalmarketing": "Marketing Digital",
     "marketingdescription": "Enfocamos el marketing digital como una fusión de experiencia técnica, creatividad e innovación, diseñando soluciones personalizadas que optimizan cada aspecto para impulsar tu presencia en línea y lograr resultados medibles.",
@@ -110,9 +111,9 @@
   },
 
   "services":{
-    "turning": "Transformando ",
-    "ideas": "ideas",
-    "h1": "en productos digitales"
+    "turning": "Transformando ideas en",
+    "h1": "experiencias digitales",
+    "herotext":"Estamos comprometidos con la creación de soluciones web y móviles con diseño minimalista y alto rendimiento."
   },
 
   "login": {
