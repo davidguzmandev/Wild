@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {
-  Briefcase,
+  ShoppingCart,
   Code,
   LayoutGrid,
   ThumbsUp,
@@ -46,7 +46,7 @@ export default function service({ translations }: { translations: any }) {
     {
       title: `${translations.ecommerce}`,
       description: `${translations.ecommercetext}`,
-      icon: Briefcase,
+      icon: ShoppingCart,
       link: "/services/websites",
     },
     {
