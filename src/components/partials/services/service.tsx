@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   ShoppingCart,
   Code,
@@ -10,12 +9,6 @@ import {
   Smartphone,
 } from "lucide-react";
 import ServiceCard from "@/components/common/ServiceCard";
-import Web from "@/public/images/web.webp";
-import Mobile from "@/public/images/mobile.webp";
-import Design from "@/public/images/design.webp";
-import Marketing from "@/public/images/marketing.webp";
-import Cms from "@/public/images/cms.webp";
-import Ecommerce from "@/public/images/ecommerce.webp";
 
 export default function service({ translations }: { translations: any }) {
   const cards = [
