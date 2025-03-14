@@ -55,15 +55,13 @@ export default function service({ translations }: { translations: any }) {
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="max-w-3xl mx-auto text-center space-y-4 animate-fade-in">
           <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-50 text-blue-600">
-            Nuestros Servicios
+            {translations.our}{" "}{translations.services}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Soluciones digitales para impulsar tu negocio
+            {translations.solutions}
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Ofrecemos servicios digitales integrales para ayudar a tu empresa a
-            crecer en el entorno digital con soluciones personalizadas y de alta
-            calidad.
+            {translations.weoffer}
           </p>
         </div>
 
