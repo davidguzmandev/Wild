@@ -104,18 +104,10 @@ export default function service({ translations }: { translations: any }) {
 
       <div className="flex mt-10 justify-center">
         <button
-          className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-wide cursor-pointer"
-          aria-label={translations.talktous}>
+          className="relative bg-indigo-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-wide cursor-pointer"
+          aria-label={translations.quote}>
           <span className="inline-flex items-center gap-10">
-            {translations.talktous}{" "}
-            <IconMug
-              stroke={2}
-              className="group-hover:hidden group-active:hidden"
-            />{" "}
-            <IconCoffee
-              stroke={2}
-              className="hidden group-hover:block group-active:block text-violet-500 group-active:text-violet-500"
-            />
+            {translations.quote}{" "}
           </span>
         </button>
       </div>
