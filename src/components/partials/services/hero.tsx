@@ -1,6 +1,4 @@
 import { IconCoffee, IconMug } from "@tabler/icons-react";
-import Image from "next/image";
-import Services from "@/images/services.webp";
 
 export default function Hero({
   translations,

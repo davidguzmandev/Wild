@@ -1,13 +1,14 @@
 import {
   ShoppingCart,
-  Code,
+  Search,
   LayoutGrid,
   ThumbsUp,
-  MessageSquare,
+  GraduationCap,
   LayoutTemplate,
   PencilRuler,
   Smartphone,
 } from "lucide-react";
+import { IconCoffee, IconMug } from "@tabler/icons-react";
 import ServiceCard from "@/components/common/ServiceCard";
 
 export default function service({ translations }: { translations: any }) {
@@ -15,37 +16,57 @@ export default function service({ translations }: { translations: any }) {
     {
       title: `${translations.listweb.websites}`,
       description: `${translations.websitestext}`,
+      category: `${translations.web}`,
       icon: LayoutGrid,
       link: "/services/websites",
     },
     {
       title: `${translations.appdevelop}`,
       description: `${translations.appdeveloptext}`,
+      category: `${translations.develop}`,
       icon: Smartphone,
       link: "/services/websites",
     },
     {
       title: `${translations.digitaldesign}`,
       description: `${translations.designtext}`,
+      category: `${translations.design}`,
       icon: PencilRuler,
       link: "/services/websites",
     },
     {
-      title: `${translations.marketing}`,
+      title: `${translations.digitalmarketing}`,
       description: `${translations.marketingtext}`,
+      category: `${translations.marketing}`,
       icon: ThumbsUp,
       link: "/services/websites",
     },
     {
-      title: `${translations.ecommerce}`,
+      title: `${translations.onlineshops}`,
       description: `${translations.ecommercetext}`,
+      category: `${translations.ecommerce}`,
       icon: ShoppingCart,
       link: "/services/websites",
     },
     {
       title: `${translations.cms}`,
       description: `${translations.whyuslist.cmsdescription}`,
+      category: `${translations.cms}`,
       icon: LayoutTemplate,
+      link: "/services/websites",
+    },
+    {
+      title: `${translations.seooptimization}`,
+      description: `${translations.seodescription}`,
+      category: `${translations.marketing}`,
+      icon: Search,
+      link: "/services/websites",
+    },
+    {
+      title: `${translations.educative}`,
+      description: `${translations.educativedescription}`,
+      category: `${translations.cms}`,
+      icon: GraduationCap,
       link: "/services/websites",
     },
   ];
@@ -55,7 +76,7 @@ export default function service({ translations }: { translations: any }) {
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="max-w-3xl mx-auto text-center space-y-4 animate-fade-in">
           <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-50 text-blue-600">
-            {translations.our}{" "}{translations.services}
+            {translations.our} {translations.services}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             {translations.solutions}
@@ -72,11 +93,31 @@ export default function service({ translations }: { translations: any }) {
               index={index}
               title={service.title}
               description={service.description}
+              category={service.category}
               icon={service.icon}
               className="animate-fade-up"
+              translations={translations}
             />
           ))}
         </div>
+      </div>
+
+      <div className="flex mt-10 justify-center">
+        <button
+          className="relative gradient-button bg-gradient-to-r from-indigo-500 to-purple-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-wide cursor-pointer"
+          aria-label={translations.talktous}>
+          <span className="inline-flex items-center gap-10">
+            {translations.talktous}{" "}
+            <IconMug
+              stroke={2}
+              className="group-hover:hidden group-active:hidden"
+            />{" "}
+            <IconCoffee
+              stroke={2}
+              className="hidden group-hover:block group-active:block text-violet-500 group-active:text-violet-500"
+            />
+          </span>
+        </button>
       </div>
 
       {/* {cards.map((card, index) => (

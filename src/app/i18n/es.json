@@ -25,6 +25,8 @@
     "designdescription": "Un diseño profesional es clave para que tu empresa sea única, relevante y duradera. No subestimes el poder de una imagen impactante: asegura el futuro y la identidad de tu organización con un diseño que hable por sí solo.",
     "develop": "Desarrollo",
     "cms": "CMS",
+    "seooptimization": "Optimización SEO",
+    "seodescription": "Mejoramos la visibilidad de tu sitio en los motores de búsqueda y aumentamos el tráfico orgánico.",
     "marketing": "Marketing",
     "webdesign": "Diseño Web",
     "websitestext":"La solución perfecta para impulsar tu negocio o proyecto al siguiente nivel",
@@ -44,6 +46,7 @@
     "ecommerce": "eCommerce",
     "ecommercedescription": "Desde aumentar la visibilidad de tu marca y guiar a tus clientes a través del embudo de marketing, hasta convertirlos en clientes fieles y satisfechos que recomiendan tu negocio, estaremos contigo en cada paso del camino para maximizar tu impacto y éxito.",
     "educative": "Educativo",
+    "educativedescription": "Plataformas educativas para centros de formacion profesional o simplemente para cursos online.",
     "onlineshops": "Tiendas Virtuales",
     "branddesign": "Diseño de Marca",
     "logodesign": "Diseño de Logo",
@@ -63,7 +66,7 @@
       "designuiux": "Diseño UI/UX",
       "designuiuxdescription": "Creamos interfaces graficas intuitivas para el usuario con optimizaciones funcionales en cada elemento del producto.",
       "webdevelopdescription": "Cada página web es diferente, por lo que nos aseguramos de que cada sitio que desarrollamos sea único y se adapte a las necesidades específicas de nuestros clientes.",
-      "cmsdescription": "Trabajamos con sistemas de gestion de contenido como Wordpress, Joomla, Shopify o incluso Moodle para instituciones educativas."
+      "cmsdescription": "Mayor administracion de tu sitio web con sistemas de gestion de contenido como Wordpress, Joomla, Shopify o incluso Moodle."
     },
     "nav": {
       "create": "Creamos.",
