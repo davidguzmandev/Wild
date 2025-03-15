@@ -72,7 +72,7 @@ export default function service({ translations }: { translations: any }) {
   ];
 
   return (
-    <section id="services" className="py-24 px-4 overflow-hidden">
+    <section id="services" className="pt-24 pb-10 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="max-w-3xl mx-auto text-center space-y-4 animate-fade-in">
           <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-blue-50 text-blue-600">
@@ -104,7 +104,7 @@ export default function service({ translations }: { translations: any }) {
 
       <div className="flex mt-10 justify-center">
         <button
-          className="relative bg-indigo-500 font-semibold text-white rounded-full py-4 px-6 group hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-wide cursor-pointer"
+          className="relative bg-indigo-500 font-semibold text-white rounded-full py-4 px-6 hover:shadow-xl hover:scale-105 transition-all duration-600 uppercase text-lg tracking-wide cursor-pointer"
           aria-label={translations.quote}>
           <span className="inline-flex items-center gap-10">
             {translations.quote}{" "}

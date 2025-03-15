@@ -25,7 +25,7 @@ export default function WhyUs({ translations }: { translations: any }) {
       id="whyus"
       aria-labelledby="whyus-heading"
       className={`min-h-screen my-20 transition-all  ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+        isVisible ? "opacity-100 translate-y-0 duration-500" : "opacity-0 translate-y-5"
       }`}>
       <div className="max-w-full px-8 sm:px-6 mb-20 lg:px-20">
         <div className="max-w-7xl w-full px-8 sm:px-6 lg:px-8 self-start mb-20">

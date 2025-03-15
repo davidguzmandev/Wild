@@ -17,7 +17,7 @@ export default function Letstalk({ translations }: { translations: any }) {
           <p className="text-4xl xs:text-5xl font-base pb-2 tracking-tight">
             {translations.projectinmind}
           </p>
-          <p className="text-4xl xs:text-7xl font-bold pb-10 text-indigo-600">
+          <p className="text-center text-5xl md:text-7xl font-bold pb-10 text-indigo-600">
             {translations.letstalk}
           </p>
           <p className="text-gray-600 pb-8">

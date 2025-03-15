@@ -63,7 +63,7 @@ body {
   transition: transform 0.3s ease-in-out;
   z-index: 0;
   transform: translateX(-100%);
-  border-radius: 30px;
+  border-radius: 60px;
 }
 
 .gradient-button:hover::before {
