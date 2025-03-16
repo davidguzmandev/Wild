@@ -1,11 +1,13 @@
 import { cn } from "@/utils/utils";
 import { LucideIcon } from "lucide-react";
+import Link from "next/link";
 
 interface ServiceCardProps {
   title: string;
   description: string;
   category: string;
   icon: LucideIcon;
+  link: string;
   className?: string;
   index?: number;
 }
@@ -15,6 +17,7 @@ export default function ServiceCard({
   description,
   category,
   icon: Icon,
+  link,
   className,
   index = 0,
   translations,
@@ -43,9 +46,11 @@ export default function ServiceCard({
       </div>
       <div className="mt-4 w-full h-px bg-slate-100" />
       <div className="flex items-center text-sm text-slate-500 mt-2">
-        <span className="transition-colors hover:text-indigo-600 cursor-pointer">
+        <Link
+          href={link}
+          className="transition-colors hover:text-indigo-600 cursor-pointer">
           {translations.viewmore}
-        </span>
+        </Link>
         <svg
           className="ml-1 w-4 h-4 transition-transform transform group-hover:translate-x-1"
           fill="none"

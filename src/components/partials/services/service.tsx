@@ -95,6 +95,7 @@ export default function service({ translations }: { translations: any }) {
               description={service.description}
               category={service.category}
               icon={service.icon}
+              link={service.link}
               className="animate-fade-up"
               translations={translations}
             />
